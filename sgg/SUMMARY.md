@@ -21,7 +21,7 @@
 - [setState的使用](017_setState的使用.md)
 - [state的简写方式](018_state的简写方式.md)
 - [总结state](019_总结state.md)
-- [020](020_.md)
+- [props基本使用](020_props基本使用.md)
 - [批量传递](021_批量传递.md)
 - [对](022_对.md)
 - [023](023_.md)
