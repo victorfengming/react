@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    let arr1 = [1, 3, 5, 7, 9];
+    let arr2 = [2, 4, 6];
+    console.log(...arr1)    // 展开运算符
+    console.log(arr2)
+    let arr3 = [...arr1, ...arr2]; // 连接数组
+    console.log(arr3)
+
+    function sum(a, b) {
+        return a + b;
+    }
+
+    console.log(sum(1, 2));
+
+    // 在函数中使用
+    // 我现在参数不固定
+    function superSum(...num) {
+        return num.reduce((preValue, currentValue) => {
+            return preValue + currentValue
+        });
+    }
+
+    console.log(superSum(1, 3, 2, 6, 4))
+
+    // 构造字面量对象时 ,使用展开语法
+    let person = {name:"tom", age: "18"}
+    // 三点运算符 不能够 作用在 person
+    console.log(...person)  // 报错
+    // 即 展开运算符 不能够展开一个对象
+
+    let person2 = person    // 这样 不能够复制
+    // 两个都同步改了
+    // 但是
+    let person3 = {...person}
+    // 这样就行
+
+    // 复制对象的同时修改他的属性
+    let person4 = {...person,name:"jack"}
+    console.log(person4);
+
+
+</script>
+</body>
+</html>

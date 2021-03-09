@@ -66,12 +66,49 @@ react 中 他重新封装了这些事件, 他
 
  
  
+```javascript
+    // 创建组件
+    class Person extends React.Component {
+        state = {name: 'tom', age: "18", sex: "女"}
+
+        render() {
+            const {name, age, sex} = this.props
+
+            // 从组建外部 来给他信息,也就是不能用state 来给他数据信息
+            return (
+                <ul>
+                    <li>姓名: {name}</li>
+                    <li>姓别: {sex}</li>
+                    <li>年龄: {age}</li>
+                </ul>
+            )
+        }
+    }
+
+    // 渲染组件到页面
+    ReactDOM.render(<Person name="tom" age="18" sex="女"/>, document.getElementById('test'))
+    ReactDOM.render(<Person name="jack" age="17" sex="男"/>, document.getElementById('test2'))
+    ReactDOM.render(<Person name="victor" age="19" sex="男"/>, document.getElementById('test3'))
+
+```
  
+基本写法
+
+
  
+>语法糖
+>
+
+```javascript
+const p = {name:'nancy',age:18, sex: '女'}
+    // 渲染组件到页面
+    ReactDOM.render(<Person {...p}/>, document.getElementById('test3'))
+```
  
- 
- 
- 
+>这个前提是你要key和后端获取的key一样
+>
+
+
  
  
  

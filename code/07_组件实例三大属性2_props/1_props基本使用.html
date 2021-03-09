@@ -43,10 +43,13 @@ react 中 他重新封装了这些事件, 他
         }
     }
 
+    const p = {name:'nancy',age:18, sex: '女'}
     // 渲染组件到页面
-    ReactDOM.render(<Person name="tom" age="18" sex="女"/>, document.getElementById('test'))
-    ReactDOM.render(<Person name="jack" age="17" sex="男"/>, document.getElementById('test2'))
-    ReactDOM.render(<Person name="victor" age="19" sex="男"/>, document.getElementById('test3'))
+    ReactDOM.render(<Person {...p}/>, document.getElementById('test3'))
+    // 这个react+babel 就允许你用展开运算符来展开对象了
+    // 但是你不能用 console.log()打印来看
+    // 薛定谔的猫 你不能看他
+    // 只允许你在这个render里面使用
 </script>
 
 
