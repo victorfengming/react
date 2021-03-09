@@ -42,19 +42,16 @@ react 中 他重新封装了这些事件, 他
 
         // document 这里你就尽量只是在这里写一次 document
         changeWeather() {
-            // changeWeather 放在哪里? - weather房子啊了原型上
-            // 通过Weather 实例调用changeWeather时,changeWeather中的this就是Weather
-            // // 实例 changeWeather
+            // changeWeather 放在哪里? - weather房子啊了原型上 ,公实例使用
+            // 由于changeWeather是作为onClick的回调,所以不是通过实例调用的,是直接调用
+            // 然后由于类中的方法默认开启了局部的严格模式,所以changeWeather中的this为undefined
             console.log(this);  // 报错
-            // this.state.isHot = ~this.state.isHot;
         }
     }
 
     // 2.  渲染 组件到页面
     ReactDOM.render(<Weather/>, document.getElementById('test'));
 
-
-    // idea 运行 React ,alt+F2
 </script>
 
 
