@@ -29,23 +29,29 @@ react 中 他重新封装了这些事件, 他
             super(props);
             // 初始化状态
             this.state = {isHot: false}
+            this.changeWeather = this.changeWeather.bind(this)
+            // 可以获取到了
+            // this.changeWeather 可以通过原型找到他
+            // this.changeWeather.bind(this) 执行完了就获得到了一个实例对象
+            // 然后赋值给了changeWeather
+            this.demo = this.changeWeather
+            // 解决changeWeather 指向的问题
         }
 
         render() {
             console.log(this);
             // 读取状态
             const {isHot} = this.state.isHot
-            return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
-            //onClick 要大写的C
-            //    这里demo不能写括号
+            return <h1 onClick={this.demo}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            // 这里调用的是自身上的changeWeather,而不是原型上的changeWeather
+            // this.changeWeather = this.changeWeather.bind(this)
+            // 吧原型上的函数 挂在了 本实例 中的属性上
+
         }
 
-        // document 这里你就尽量只是在这里写一次 document
         changeWeather() {
-            // changeWeather 放在哪里? - weather房子啊了原型上 ,公实例使用
-            // 由于changeWeather是作为onClick的回调,所以不是通过实例调用的,是直接调用
-            // 然后由于类中的方法默认开启了局部的严格模式,所以changeWeather中的this为undefined
             console.log(this);  // 报错
+
         }
     }
 
