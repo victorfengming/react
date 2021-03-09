@@ -1,0 +1,1881 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>组件间通信方式总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="000_课件.html" />
+    
+    
+    <link rel="prev" href="125_扩展10_ErrorBoundary.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="001_react简介.html">
+            
+                <a href="001_react简介.html">
+            
+                    
+                    react简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="002_hello_react案例.html">
+            
+                <a href="002_hello_react案例.html">
+            
+                    
+                    hello_react案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="003_虚拟DOM的两种创建方式.html">
+            
+                <a href="003_虚拟DOM的两种创建方式.html">
+            
+                    
+                    虚拟DOM的两种创建方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="004_虚拟DOM与真实DOM.html">
+            
+                <a href="004_虚拟DOM与真实DOM.html">
+            
+                    
+                    虚拟DOM与真实DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="005_jsx语法规则.html">
+            
+                <a href="005_jsx语法规则.html">
+            
+                    
+                    jsx语法规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="006_jsx小练习.html">
+            
+                <a href="006_jsx小练习.html">
+            
+                    
+                    jsx小练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="007_组件与模块.html">
+            
+                <a href="007_组件与模块.html">
+            
+                    
+                    组件与模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="008_开发者工具的安装.html">
+            
+                <a href="008_开发者工具的安装.html">
+            
+                    
+                    开发者工具的安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="009_函数式组件.html">
+            
+                <a href="009_函数式组件.html">
+            
+                    
+                    函数式组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="010_复习类相关知识.html">
+            
+                <a href="010_复习类相关知识.html">
+            
+                    
+                    复习类相关知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="011_类式组件.html">
+            
+                <a href="011_类式组件.html">
+            
+                    
+                    类式组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="012_对state的理解.html">
+            
+                <a href="012_对state的理解.html">
+            
+                    
+                    对state的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="013_初始化state.html">
+            
+                <a href="013_初始化state.html">
+            
+                    
+                    初始化state
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="014_react中的事件绑定.html">
+            
+                <a href="014_react中的事件绑定.html">
+            
+                    
+                    react中的事件绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="015_类中方法中的this.html">
+            
+                <a href="015_类中方法中的this.html">
+            
+                    
+                    类中方法中的this
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="016_解决类中this指向问题.html">
+            
+                <a href="016_解决类中this指向问题.html">
+            
+                    
+                    解决类中this指向问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="017_setState的使用.html">
+            
+                <a href="017_setState的使用.html">
+            
+                    
+                    setState的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="018_state的简写方式.html">
+            
+                <a href="018_state的简写方式.html">
+            
+                    
+                    state的简写方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="019_总结state.html">
+            
+                <a href="019_总结state.html">
+            
+                    
+                    总结state
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="020_.html">
+            
+                <a href="020_.html">
+            
+                    
+                    020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="021_批量传递.html">
+            
+                <a href="021_批量传递.html">
+            
+                    
+                    批量传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="022_对.html">
+            
+                <a href="022_对.html">
+            
+                    
+                    对
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="023_.html">
+            
+                <a href="023_.html">
+            
+                    
+                    023
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="024_类式组件中的构造器与.html">
+            
+                <a href="024_类式组件中的构造器与.html">
+            
+                    
+                    类式组件中的构造器与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="025_函数式组件使用.html">
+            
+                <a href="025_函数式组件使用.html">
+            
+                    
+                    函数式组件使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="026_总结.html">
+            
+                <a href="026_总结.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="027_字符串形式的ref.html">
+            
+                <a href="027_字符串形式的ref.html">
+            
+                    
+                    字符串形式的ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="028_回调形式的ref.html">
+            
+                <a href="028_回调形式的ref.html">
+            
+                    
+                    回调形式的ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="029_回调ref中调用次数的问题.html">
+            
+                <a href="029_回调ref中调用次数的问题.html">
+            
+                    
+                    回调ref中调用次数的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="030_createRef的使用.html">
+            
+                <a href="030_createRef的使用.html">
+            
+                    
+                    createRef的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="031_总结ref.html">
+            
+                <a href="031_总结ref.html">
+            
+                    
+                    总结ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="032_react中的事件处理.html">
+            
+                <a href="032_react中的事件处理.html">
+            
+                    
+                    react中的事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="033_非受控组件.html">
+            
+                <a href="033_非受控组件.html">
+            
+                    
+                    非受控组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="034_受控组件.html">
+            
+                <a href="034_受控组件.html">
+            
+                    
+                    受控组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="035_高阶函数_函数柯里化.html">
+            
+                <a href="035_高阶函数_函数柯里化.html">
+            
+                    
+                    高阶函数_函数柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="036_不用柯里化的写法.html">
+            
+                <a href="036_不用柯里化的写法.html">
+            
+                    
+                    不用柯里化的写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="037_引出生命周期.html">
+            
+                <a href="037_引出生命周期.html">
+            
+                    
+                    引出生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="038_生命周期旧_组件挂载流程.html">
+            
+                <a href="038_生命周期旧_组件挂载流程.html">
+            
+                    
+                    生命周期(旧)_组件挂载流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="039_生命周期旧_setState流程.html">
+            
+                <a href="039_生命周期旧_setState流程.html">
+            
+                    
+                    生命周期(旧)_setState流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+            
+                <a href="040_生命周期旧_forceU.html">
+            
+                    
+                    生命周期(旧)_forceU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="041_生命周期旧_父组件render流程.html">
+            
+                <a href="041_生命周期旧_父组件render流程.html">
+            
+                    
+                    生命周期(旧)_父组件render流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="042_总结生命周期旧.html">
+            
+                <a href="042_总结生命周期旧.html">
+            
+                    
+                    总结生命周期(旧)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="043_对比新旧生命周期.html">
+            
+                <a href="043_对比新旧生命周期.html">
+            
+                    
+                    对比新旧生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+            
+                <a href="044_getDerivedStateFrom.html">
+            
+                    
+                    getDerivedStateFrom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+            
+                <a href="045_getSna.html">
+            
+                    
+                    getSna
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+            
+                <a href="046_getSna.html">
+            
+                    
+                    getSna
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="047_总结生命周期新.html">
+            
+                <a href="047_总结生命周期新.html">
+            
+                    
+                    总结生命周期(新)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="048_DOM的diffing算法.html">
+            
+                <a href="048_DOM的diffing算法.html">
+            
+                    
+                    DOM的diffing算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="049_初始化react脚手架.html">
+            
+                <a href="049_初始化react脚手架.html">
+            
+                    
+                    初始化react脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="050_脚手架文件介绍_.html">
+            
+                <a href="050_脚手架文件介绍_.html">
+            
+                    
+                    脚手架文件介绍_
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="051_脚手架文件介绍_src.html">
+            
+                <a href="051_脚手架文件介绍_src.html">
+            
+                    
+                    脚手架文件介绍_src
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="052_一个简单的Hello组件.html">
+            
+                <a href="052_一个简单的Hello组件.html">
+            
+                    
+                    一个简单的Hello组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="053_样式的模块化.html">
+            
+                <a href="053_样式的模块化.html">
+            
+                    
+                    样式的模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="054_vscode中react插件的安装.html">
+            
+                <a href="054_vscode中react插件的安装.html">
+            
+                    
+                    vscode中react插件的安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="055_组件化编码流程.html">
+            
+                <a href="055_组件化编码流程.html">
+            
+                    
+                    组件化编码流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="056_TodoList案例_静态组件.html">
+            
+                <a href="056_TodoList案例_静态组件.html">
+            
+                    
+                    TodoList案例_静态组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="057_TodoList案例_动态初始化列表.html">
+            
+                <a href="057_TodoList案例_动态初始化列表.html">
+            
+                    
+                    TodoList案例_动态初始化列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="058_TodoList案例_添加todo.html">
+            
+                <a href="058_TodoList案例_添加todo.html">
+            
+                    
+                    TodoList案例_添加todo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="059_TodoList案例_鼠标移入效果.html">
+            
+                <a href="059_TodoList案例_鼠标移入效果.html">
+            
+                    
+                    TodoList案例_鼠标移入效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="060_TodoList案例_添加一个todo.html">
+            
+                <a href="060_TodoList案例_添加一个todo.html">
+            
+                    
+                    TodoList案例_添加一个todo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="061_TodoList案例_对.html">
+            
+                <a href="061_TodoList案例_对.html">
+            
+                    
+                    TodoList案例_对
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="062_TodoList案例_删除一个todo.html">
+            
+                <a href="062_TodoList案例_删除一个todo.html">
+            
+                    
+                    TodoList案例_删除一个todo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="063_TodoList案例_实现底部功能.html">
+            
+                <a href="063_TodoList案例_实现底部功能.html">
+            
+                    
+                    TodoList案例_实现底部功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="064_TodoList案例_总结TodoList案例.html">
+            
+                <a href="064_TodoList案例_总结TodoList案例.html">
+            
+                    
+                    TodoList案例_总结TodoList案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="065_脚手架配置代理_方法1.html">
+            
+                <a href="065_脚手架配置代理_方法1.html">
+            
+                    
+                    脚手架配置代理_方法1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="066_脚手架配置代理_方法2.html">
+            
+                <a href="066_脚手架配置代理_方法2.html">
+            
+                    
+                    脚手架配置代理_方法2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="067_github搜索案例_静态组件.html">
+            
+                <a href="067_github搜索案例_静态组件.html">
+            
+                    
+                    github搜索案例_静态组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="068_github搜索案例_axios发送请求.html">
+            
+                <a href="068_github搜索案例_axios发送请求.html">
+            
+                    
+                    github搜索案例_axios发送请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="069_github搜索案例_展示数据.html">
+            
+                <a href="069_github搜索案例_展示数据.html">
+            
+                    
+                    github搜索案例_展示数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="070_github搜索案例_完成案例.html">
+            
+                <a href="070_github搜索案例_完成案例.html">
+            
+                    
+                    github搜索案例_完成案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="071_消息订阅与发布技_.html">
+            
+                <a href="071_消息订阅与发布技_.html">
+            
+                    
+                    消息订阅与发布技_
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="072_fetch发送请求.html">
+            
+                <a href="072_fetch发送请求.html">
+            
+                    
+                    fetch发送请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="073_总结github搜索案例.html">
+            
+                <a href="073_总结github搜索案例.html">
+            
+                    
+                    总结github搜索案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="074_对S.html">
+            
+                <a href="074_对S.html">
+            
+                    
+                    对S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="075_对路由的理解.html">
+            
+                <a href="075_对路由的理解.html">
+            
+                    
+                    对路由的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.77" data-path="076_前端路由原理.html">
+            
+                <a href="076_前端路由原理.html">
+            
+                    
+                    前端路由原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.78" data-path="077_路由的基本使用.html">
+            
+                <a href="077_路由的基本使用.html">
+            
+                    
+                    路由的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.79" data-path="078_路由组件与一般组件.html">
+            
+                <a href="078_路由组件与一般组件.html">
+            
+                    
+                    路由组件与一般组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.80" data-path="079_NavLink的使用.html">
+            
+                <a href="079_NavLink的使用.html">
+            
+                    
+                    NavLink的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.81" data-path="080_封装NavLink组件.html">
+            
+                <a href="080_封装NavLink组件.html">
+            
+                    
+                    封装NavLink组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.82" data-path="081_Switch的使用.html">
+            
+                <a href="081_Switch的使用.html">
+            
+                    
+                    Switch的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.83" data-path="082_解决样式丢失问题.html">
+            
+                <a href="082_解决样式丢失问题.html">
+            
+                    
+                    解决样式丢失问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.84" data-path="083_路由的模糊匹配与严格匹配.html">
+            
+                <a href="083_路由的模糊匹配与严格匹配.html">
+            
+                    
+                    路由的模糊匹配与严格匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.85" data-path="084_Redirect的使用.html">
+            
+                <a href="084_Redirect的使用.html">
+            
+                    
+                    Redirect的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.86" data-path="085_嵌套路由.html">
+            
+                <a href="085_嵌套路由.html">
+            
+                    
+                    嵌套路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.87" data-path="086_向路由组件传递.html">
+            
+                <a href="086_向路由组件传递.html">
+            
+                    
+                    向路由组件传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.88" data-path="087_向路由组件传递search参数.html">
+            
+                <a href="087_向路由组件传递search参数.html">
+            
+                    
+                    向路由组件传递search参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.89" data-path="088_向路由组件传递state参数.html">
+            
+                <a href="088_向路由组件传递state参数.html">
+            
+                    
+                    向路由组件传递state参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.90" data-path="089_总结路由参数.html">
+            
+                <a href="089_总结路由参数.html">
+            
+                    
+                    总结路由参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.91" data-path="090_.html">
+            
+                <a href="090_.html">
+            
+                    
+                    090
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.92" data-path="091_编程式路由导航.html">
+            
+                <a href="091_编程式路由导航.html">
+            
+                    
+                    编程式路由导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.93" data-path="092_withRouter的使用.html">
+            
+                <a href="092_withRouter的使用.html">
+            
+                    
+                    withRouter的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.94" data-path="093_BrowserRouter与HashRouter.html">
+            
+                <a href="093_BrowserRouter与HashRouter.html">
+            
+                    
+                    BrowserRouter与HashRouter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.95" data-path="094_antd的基本使用.html">
+            
+                <a href="094_antd的基本使用.html">
+            
+                    
+                    antd的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.96" data-path="095_antd样式的按需引入.html">
+            
+                <a href="095_antd样式的按需引入.html">
+            
+                    
+                    antd样式的按需引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.97" data-path="096_antd自定义主题.html">
+            
+                <a href="096_antd自定义主题.html">
+            
+                    
+                    antd自定义主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.98" data-path="097_redux简介.html">
+            
+                <a href="097_redux简介.html">
+            
+                    
+                    redux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.99" data-path="098_redux工作流程.html">
+            
+                <a href="098_redux工作流程.html">
+            
+                    
+                    redux工作流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.100" data-path="099_求和案例_纯react版.html">
+            
+                <a href="099_求和案例_纯react版.html">
+            
+                    
+                    求和案例_纯react版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.101" data-path="100_求和案例_redux精简版.html">
+            
+                <a href="100_求和案例_redux精简版.html">
+            
+                    
+                    求和案例_redux精简版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.102" data-path="101_求和案例_redux完整版.html">
+            
+                <a href="101_求和案例_redux完整版.html">
+            
+                    
+                    求和案例_redux完整版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.103" data-path="102_求和案例_异步action版.html">
+            
+                <a href="102_求和案例_异步action版.html">
+            
+                    
+                    求和案例_异步action版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.104" data-path="103_对react-redux的理解.html">
+            
+                <a href="103_对react-redux的理解.html">
+            
+                    
+                    对react-redux的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.105" data-path="104_连接容器组件与UI组件.html">
+            
+                <a href="104_连接容器组件与UI组件.html">
+            
+                    
+                    连接容器组件与UI组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.106" data-path="105_react-redux基本使用.html">
+            
+                <a href="105_react-redux基本使用.html">
+            
+                    
+                    react-redux基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.107" data-path="106_优化1_简写ma.html">
+            
+                <a href="106_优化1_简写ma.html">
+            
+                    
+                    优化1_简写ma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.108" data-path="107_优化2_.html">
+            
+                <a href="107_优化2_.html">
+            
+                    
+                    优化2_
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.109" data-path="108_优化3_整合UI组件与容器组件.html">
+            
+                <a href="108_优化3_整合UI组件与容器组件.html">
+            
+                    
+                    优化3_整合UI组件与容器组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.110" data-path="109_数据共享_编写.html">
+            
+                <a href="109_数据共享_编写.html">
+            
+                    
+                    数据共享_编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.111" data-path="110_数据共享_编写.html">
+            
+                <a href="110_数据共享_编写.html">
+            
+                    
+                    数据共享_编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.112" data-path="111_数据共享_完成数据共享.html">
+            
+                <a href="111_数据共享_完成数据共享.html">
+            
+                    
+                    数据共享_完成数据共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.113" data-path="112_纯函数.html">
+            
+                <a href="112_纯函数.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.114" data-path="113_redux开发者工具.html">
+            
+                <a href="113_redux开发者工具.html">
+            
+                    
+                    redux开发者工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.115" data-path="114_最终版.html">
+            
+                <a href="114_最终版.html">
+            
+                    
+                    最终版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.116" data-path="115_项目打包运行.html">
+            
+                <a href="115_项目打包运行.html">
+            
+                    
+                    项目打包运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.117" data-path="116_扩展1_setState.html">
+            
+                <a href="116_扩展1_setState.html">
+            
+                    
+                    扩展1_setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.118" data-path="117_扩展2_lazyLoad.html">
+            
+                <a href="117_扩展2_lazyLoad.html">
+            
+                    
+                    扩展2_lazyLoad
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.119" data-path="118_扩展3_stateHook.html">
+            
+                <a href="118_扩展3_stateHook.html">
+            
+                    
+                    扩展3_stateHook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.120" data-path="119_扩展4_EffectHook.html">
+            
+                <a href="119_扩展4_EffectHook.html">
+            
+                    
+                    扩展4_EffectHook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.121" data-path="120_扩展5_RefHook.html">
+            
+                <a href="120_扩展5_RefHook.html">
+            
+                    
+                    扩展5_RefHook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.122" data-path="121_扩展6_Fragment.html">
+            
+                <a href="121_扩展6_Fragment.html">
+            
+                    
+                    扩展6_Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.123" data-path="122_扩展7_Context.html">
+            
+                <a href="122_扩展7_Context.html">
+            
+                    
+                    扩展7_Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.124" data-path="123_扩展8_.html">
+            
+                <a href="123_扩展8_.html">
+            
+                    
+                    扩展8_
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.125" data-path="124_扩展9_render.html">
+            
+                <a href="124_扩展9_render.html">
+            
+                    
+                    扩展9_render
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.126" data-path="125_扩展10_ErrorBoundary.html">
+            
+                <a href="125_扩展10_ErrorBoundary.html">
+            
+                    
+                    扩展10_ErrorBoundary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.127" data-path="126_组件间通信方式总结.html">
+            
+                <a href="126_组件间通信方式总结.html">
+            
+                    
+                    组件间通信方式总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.128" data-path="000_课件.html">
+            
+                <a href="000_课件.html">
+            
+                    
+                    课件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >组件间通信方式总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="126&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#x603B;&#x7ED3;md">126_&#x7EC4;&#x4EF6;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#x603B;&#x7ED3;.md</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="125_扩展10_ErrorBoundary.html" class="navigation navigation-prev " aria-label="Previous page: 扩展10_ErrorBoundary">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="000_课件.html" class="navigation navigation-next " aria-label="Next page: 课件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"组件间通信方式总结","level":"1.127","depth":1,"next":{"title":"课件","level":"1.128","depth":1,"path":"000_课件.md","ref":"000_课件.md","articles":[]},"previous":{"title":"扩展10_ErrorBoundary","level":"1.126","depth":1,"path":"125_扩展10_ErrorBoundary.md","ref":"125_扩展10_ErrorBoundary.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"126_组件间通信方式总结.md","mtime":"2021-03-09T00:37:02.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-09T09:00:08.037Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
