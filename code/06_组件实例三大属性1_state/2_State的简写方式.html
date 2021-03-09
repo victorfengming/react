@@ -1,43 +1,3 @@
-# 018_state的简写方式
-
-
-自己写的方法,基杰上是健为事件触发后要执行的方法来使用的o
-
-
-90%以上都是这样
-
-
-## 来来来回顾一下
->
-
-
-```JavaScript
-class Car{
-        constructor(name,price) {
-            this.name = name;
-            this.price = price;
-            this.wheel = 4;
-        }
-
-        // 类 中可以直接写复制语句
-        a = 1;
-        // 上述dia代码的含义是: 给Car的实例对象添加一个属性,名为a,值为1
-    }
-
-    const c1 = new Car("奔驰c63",199);
-    const c2 = new Car("奔驰c63",299);
-    console.log(c1);
-    console.log(c2);
-```
-
->就是说,我这个类里面可以写成员属性
-
-## 然后这么写
->
-
-
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -93,5 +53,3 @@ react 中 他重新封装了这些事件, 他
 
 </body>
 </html>
-
-```

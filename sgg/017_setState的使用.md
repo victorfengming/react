@@ -122,7 +122,6 @@ react 中 他重新封装了这些事件, 他
             // 解决changeWeather 指向的问题
         }
         // render调用几次? - 1+n次, 1是初始化的那次 n是状态更新的次数
-
         render() {
             console.log(this);
             // 读取状态
