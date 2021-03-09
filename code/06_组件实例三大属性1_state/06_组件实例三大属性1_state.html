@@ -35,19 +35,24 @@ react 中 他重新封装了这些事件, 他
             console.log(this);
             // 读取状态
             const {isHot} = this.state.isHot
-            return <h1 onClick={demo}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
             //onClick 要大写的C
-        //    这里demo不能写括号
+            //    这里demo不能写括号
+        }
+
+        // document 这里你就尽量只是在这里写一次 document
+        changeWeather() {
+            // changeWeather 放在哪里? - weather房子啊了原型上
+            // 通过Weather 实例调用changeWeather时,changeWeather中的this就是Weather实例
+            console.log(666);
+            console.log(this);  // 报错
+            // this.state.isHot = ~this.state.isHot;
         }
     }
 
     // 2.  渲染 组件到页面
     ReactDOM.render(<Weather/>, document.getElementById('test'));
 
-    // document 这里你就尽量只是在这里写一次 document
-    function demo() {
-        alert("点了");
-    }
 
     // idea 运行 React ,alt+F2
 </script>
