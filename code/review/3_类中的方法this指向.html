@@ -1,8 +1,3 @@
-# 015_类中方法中的this.md
-
-![image-20210309153852543](img/image-20210309153852543.png)
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,28 +23,31 @@
 
     const p1 = new Person("张三",18);
     p1.speak()
-    
+
     ///Person {name: "张三", aeg: 18}
     // aeg: 18
 // name: "张三"
 // __proto__: Object
     const x = p1.study  //这行没有调用
     // study 放在了哪里? - 类的原型对象上,供实例使用
-    x() // 这个直接调用
+    // x() // 这个直接调用
 
+    function demo() {
+        'use strict'
+        console.log("this")
+        console.log(this)
+        console.log("this");
+
+        /*
+        * this
+        3_类中的方法this指向.html?_ijt=8q4o0h7jiot35v2n9l7dmkc877:38 undefined
+        3_类中的方法this指向.html?_ijt=8q4o0h7jiot35v2n9l7dmkc877:39
+        * */
+    }
+
+    // 测试调用
+    demo()
 </script>
 
 </body>
 </html>
-```
-
-
->类中所有你定义的方法他在局部都开启的严格模式
->
-
->类帮你自动开的
-
-![image-20210309155827355](img/image-20210309155827355.png)
-
-
-## 局部严格模式
