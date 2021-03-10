@@ -46,7 +46,7 @@
 - [总结生命周期(旧)](042_总结生命周期旧.md)
 - [对比新旧生命周期](043_对比新旧生命周期.md)
 - [getDerivedStateFromProps](044_getDerivedStateFromProps.md)
-- [getSna](045_getSna.md)
+- [getSnapshotBeforeUpdate](045_getSnapshotBeforeUpdate.md)
 - [getSna](046_getSna.md)
 - [总结生命周期(新)](047_总结生命周期新.md)
 - [DOM的diffing算法](048_DOM的diffing算法.md)

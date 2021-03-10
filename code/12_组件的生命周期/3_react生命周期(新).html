@@ -49,9 +49,12 @@
         static getDerivedStateFromProps(props,state) {
             // 如果当真
             console.log("get|DerivedStateFromProps",props,state);
-            return {count:108};
+            return null;
         }
 
+        static getSnapshotBeforeUpdate() {
+            console.log("getSnapshotBeforeUpdate");
+        }
         // 组件将要挂载的钩子
         componentWillMount() {
             console.log("componentWillMount");

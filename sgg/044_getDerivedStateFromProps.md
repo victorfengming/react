@@ -122,10 +122,14 @@ static getDerivedStateFromProps(props) {
 了解即可
 
 ```javascript
+// 若state 的值在任何时候都取决于props,那么可以使用getDerivedStateFromProps
 static getDerivedStateFromProps(props,state) {
     // 如果当真
     console.log("get|DerivedStateFromProps",props,state);
     return {count:108};
 }
+// 为什么不是必须要用呢,你看你要是 状态state都是固定的了,那你直接在构造器里面用
+// 那不也成了么 还是不用 这个函数啊
+// 就这钩子, 他没啥太大意义,就给他干掉都行
 ```
 
