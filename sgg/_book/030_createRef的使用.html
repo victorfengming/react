@@ -432,7 +432,7 @@
                 <a href="026_总结.html">
             
                     
-                    总结
+                    总结props
             
                 </a>
             
@@ -1798,7 +1798,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="030createref&#x7684;&#x4F7F;&#x7528;md">030_createRef&#x7684;&#x4F7F;&#x7528;.md</h1>
+                                <h1 id="030createref&#x7684;&#x4F7F;&#x7528;">030_createRef&#x7684;&#x4F7F;&#x7528;</h1>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    <span class="hljs-comment">/*
+    * React.createRef &#x8C03;&#x7528;&#x540E; &#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;,&#x8BE5;&#x5BB9;&#x5668;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x88AB;ref&#x6240;&#x6807;&#x8BC6;&#x7684;&#x8282;&#x70B9;
+    * &#x8BE5;&#x5BB9;&#x5668;&#x662F;&#x4E13;&#x4EBA;&#x4E13;&#x7528;&#x7684;
+    * &#x91CC;&#x9762;&#x5176;&#x5B9E;&#x5979;&#x53EA;&#x80FD;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;
+    * */</span>
+    myRef = React.createRef();
+    myRef2 = React.createRef();
+    showData = () =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.myRef);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.myRef.current);
+        alert(<span class="hljs-keyword">this</span>.myRef.current.value);
+    }
+    <span class="hljs-comment">//&#x5C55;&#x793A;&#x53F3;&#x4FA7;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6570;&#x636E;</span>
+    showData2 = () =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.myRef2);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.myRef2.current);
+        alert(<span class="hljs-keyword">this</span>.myRef2.current.value);
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;input ref={this.myRef} type=&quot;text&quot; placeholder=&quot;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;/&gt;&amp;nbsp;
+                &lt;button onClick={this.showData}&gt;&#x70B9;&#x6211;&#x63D0;&#x793A;&#x5DE6;&#x4FA7;&#x7684;&#x6570;&#x636E;&lt;/button&gt;
+                &amp;nbsp;
+                &lt;input onBlur={this.showData2} ref={this.myRef2} type=&quot;text&quot; placeholder=&quot;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;/&gt;&amp;nbsp;
+            &lt;/div&gt;
+        )
+    }
+}
+
+//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;
+ReactDOM.render(&lt;Demo a=&quot;1&quot; b=&quot;2&quot;/&gt;, document.getElementById(&apos;test&apos;))
+</code></pre>
+<p><img src="img/image-20210310153113707.png" alt="image-20210310153113707"></p>
 
                                 
                                 </section>
@@ -1842,7 +1879,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"createRef的使用","level":"1.31","depth":1,"next":{"title":"总结ref","level":"1.32","depth":1,"path":"031_总结ref.md","ref":"031_总结ref.md","articles":[]},"previous":{"title":"回调ref中调用次数的问题","level":"1.30","depth":1,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"030_createRef的使用.md","mtime":"2021-03-09T00:37:02.675Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T01:58:07.003Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"createRef的使用","level":"1.31","depth":1,"next":{"title":"总结ref","level":"1.32","depth":1,"path":"031_总结ref.md","ref":"031_总结ref.md","articles":[]},"previous":{"title":"回调ref中调用次数的问题","level":"1.30","depth":1,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"030_createRef的使用.md","mtime":"2021-03-10T10:18:46.709Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

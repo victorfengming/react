@@ -432,7 +432,7 @@
                 <a href="026_总结.html">
             
                     
-                    总结
+                    总结props
             
                 </a>
             
@@ -1798,7 +1798,82 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="028&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;refmd">028_&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;ref.md</h1>
+                                <h1 id="028&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;ref">028_&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;ref</h1>
+<p>&#x524D;&#x9762;&#x8BB2;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;ref&#x5DF2;&#x7ECF;&#x4E0D;&#x88AB;react&#x5B98;&#x65B9;&#x6240;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x4E86;</p>
+<p>&#x800C;&#x4E14;&#x5B98;&#x65B9;&#x8BF4;,&#x5728;&#x66F4;&#x65B0;&#x6709;&#x53EF;&#x80FD;&#x7ED9;&#x4ED6;&#x5E9F;&#x5F03;&#x6389;</p>
+<p><img src="img/image-20210310135505391.png" alt="image-20210310135505391"></p>
+<p>&#x5B98;&#x65B9;&#x7684;&#x8FD9;&#x4E2A;&#x6559;&#x7A0B;&#x7684;&#x987A;&#x5E8F;,&#x5BF9;&#x4E8E;&#x521D;&#x5B66;&#x8005;&#x4E0D;&#x662F;&#x5F88;&#x53CB;&#x597D;</p>
+<p>&#x6709;&#x5F88;&#x591A;&#x6982;&#x5FF5;&#x9700;&#x8981;&#x4E92;&#x76F8;&#x7406;&#x89E3;</p>
+<p>&#x5B98;&#x65B9;&#x6587;&#x6863;:<a href="https://react.docschina.org/docs/refs-and-the-dom.html" target="_blank">refs</a></p>
+<h3 id="&#x8FC7;&#x65F6;-api&#xFF1A;string-&#x7C7B;&#x578B;&#x7684;-refs">&#x8FC7;&#x65F6; API&#xFF1A;String &#x7C7B;&#x578B;&#x7684; Refs</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x8FC7; React&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4E86;&#x89E3;&#x8FC7;&#x4E4B;&#x524D;&#x7684; API &#x4E2D;&#x7684; string &#x7C7B;&#x578B;&#x7684; ref &#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982; <code>&quot;textInput&quot;</code>&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>this.refs.textInput</code> &#x6765;&#x8BBF;&#x95EE; DOM &#x8282;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x56E0;&#x4E3A; string &#x7C7B;&#x578B;&#x7684; refs &#x5B58;&#x5728; <a href="https://github.com/facebook/react/pull/8333#issuecomment-271648615" target="_blank">&#x4E00;&#x4E9B;&#x95EE;&#x9898;</a>&#x3002;&#x5B83;&#x5DF2;&#x8FC7;&#x65F6;&#x5E76;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x672A;&#x6765;&#x7684;&#x7248;&#x672C;&#x88AB;&#x79FB;&#x9664;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x76EE;&#x524D;&#x8FD8;&#x5728;&#x4F7F;&#x7528; <code>this.refs.textInput</code> &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE; refs &#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x7528;<a href="https://react.docschina.org/docs/refs-and-the-dom.html#callback-refs" target="_blank">&#x56DE;&#x8C03;&#x51FD;&#x6570;</a>&#x6216; <a href="https://react.docschina.org/docs/refs-and-the-dom.html#creating-refs" target="_blank"><code>createRef</code> API</a> &#x7684;&#x65B9;&#x5F0F;&#x4EE3;&#x66FF;&#x3002;</p>
+</blockquote>
+<h2 id="&#x4E00;&#x53E5;&#x8BDD;">&#x4E00;&#x53E5;&#x8BDD;</h2>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;,&#x4F1A;&#x5BFC;&#x81F4;&#x6548;&#x7387;&#x95EE;&#x9898;,&#x5B98;&#x65B9;&#x6CA1;&#x6709;&#x5177;&#x4F53;&#x8BF4;&#x660E;,&#x603B;&#x4E4B;&#x80FD;&#x4E0D;&#x7528;&#x5C31;&#x4E0D;&#x7528;&#x5427;!</p>
+<p>&#x56DE;&#x8C03;&#x51FD;&#x6570;:</p>
+<ol>
+<li>&#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;</li>
+<li>&#x4F60;&#x6CA1;&#x6709;&#x8C03;&#x7528;</li>
+<li>&#x6709;&#x4EBA;&#x8C03;&#x7528;&#x4E86;</li>
+</ol>
+<h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>1_&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;ref<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x51C6;&#x5907;&#x597D;&#x4E00;&#x4E2A;&#x201C;&#x5BB9;&#x5668;&#x201D; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;react&#x6838;&#x5FC3;&#x5E93; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;react-dom&#xFF0C;&#x7528;&#x4E8E;&#x652F;&#x6301;react&#x64CD;&#x4F5C;DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;babel&#xFF0C;&#x7528;&#x4E8E;&#x5C06;jsx&#x8F6C;&#x4E3A;js --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+        <span class="hljs-comment">//&#x5C55;&#x793A;&#x5DE6;&#x4FA7;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6570;&#x636E;</span>
+        showData = () =&gt; {
+            <span class="hljs-keyword">const</span> {input1} = <span class="hljs-keyword">this</span>
+            alert(input1.value)
+        }
+        <span class="hljs-comment">//&#x5C55;&#x793A;&#x53F3;&#x4FA7;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6570;&#x636E;</span>
+        showData2 = () =&gt; {
+            <span class="hljs-keyword">const</span> {input2} = <span class="hljs-keyword">this</span>
+            alert(input2.value)
+        }
+
+        render() {
+            <span class="hljs-keyword">return</span> (
+                &lt;div&gt;
+                    &lt;input ref={c =&gt; <span class="hljs-keyword">this</span>.input1 = c} type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;</span>/&gt;&amp;nbsp;
+                    &lt;button onClick={<span class="hljs-keyword">this</span>.showData}&gt;&#x70B9;&#x6211;&#x63D0;&#x793A;&#x5DE6;&#x4FA7;&#x7684;&#x6570;&#x636E;&lt;/button&gt;
+                    &amp;nbsp;
+                    &lt;input onBlur={<span class="hljs-keyword">this</span>.showData2} ref={c =&gt; <span class="hljs-keyword">this</span>.input2 = c} type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;</span>/&gt;&amp;nbsp;
+                &lt;/div&gt;
+            )
+        }
+
+        <span class="hljs-comment">//ref={c =&gt; this.input1 = c} &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+        <span class="hljs-comment">// &#x4F60;&#x53EA;&#x9700;&#x8981;&#x5427;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5199;&#x5728;&#x8FD9;&#x91CC;</span>
+        <span class="hljs-comment">// react &#x4F1A;&#x5E2E;&#x4F60;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;</span>
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x5199;ref,&#x4E0D;&#x80FD;&#x5199;&#x522B;&#x7684;,&#x624D;&#x80FD;&#x88AB;&#x626B;&#x5230;</span>
+        <span class="hljs-comment">// &#x8FD8;&#x5427;ref&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;,&#x4F20;&#x9012;&#x8FDB;&#x53BB;,&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B9E;&#x53C2;</span>
+    }
+
+    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
+    ReactDOM.render(&lt;Demo a=<span class="hljs-string">&quot;1&quot;</span> b=<span class="hljs-string">&quot;2&quot;</span>/&gt;, document.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1842,7 +1917,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"回调形式的ref","level":"1.29","depth":1,"next":{"title":"回调ref中调用次数的问题","level":"1.30","depth":1,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"previous":{"title":"字符串形式的ref","level":"1.28","depth":1,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"028_回调形式的ref.md","mtime":"2021-03-09T00:37:02.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T01:58:07.003Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"回调形式的ref","level":"1.29","depth":1,"next":{"title":"回调ref中调用次数的问题","level":"1.30","depth":1,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"previous":{"title":"字符串形式的ref","level":"1.28","depth":1,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"028_回调形式的ref.md","mtime":"2021-03-10T10:18:46.707Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

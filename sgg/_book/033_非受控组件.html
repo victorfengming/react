@@ -432,7 +432,7 @@
                 <a href="026_总结.html">
             
                     
-                    总结
+                    总结props
             
                 </a>
             
@@ -1798,7 +1798,61 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="033&#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;md">033_&#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;.md</h1>
+                                <h1 id="033&#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;">033_&#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;</h1>
+<h3 id="&#x7406;&#x89E3;"><em>&#x7406;&#x89E3;</em></h3>
+<p>&#x5305;&#x542B;&#x8868;&#x5355;&#x7684;&#x7EC4;&#x4EF6;&#x5206;&#x7C7B;</p>
+<p>\1. &#x53D7;&#x63A7;&#x7EC4;&#x4EF6;</p>
+<p>\2. &#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    handleSubmit = () =&gt; {
+        <span class="hljs-keyword">const</span> {username, password} = <span class="hljs-keyword">this</span>;
+        alert(<span class="hljs-string">`&#x4F60;&#x8F93;&#x5165;&#x7684;&#x7528;&#x6237;&#x540D;&#x662F;:<span class="hljs-subst">${username.value}</span>,&#x4F60;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x662F;:<span class="hljs-subst">${password.value}</span>`</span>);
+    };
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;form action=&quot;http://www.baidu.com&quot; onSubmit={this.handleSubmit}&gt;
+                &#x7528;&#x6237;&#x540D;: &lt;input ref={c =&gt; this.username = c} type=&quot;text&quot; name=&quot;username&quot;/&gt;
+                &#x5BC6;&#x7801;: &lt;input ref={c =&gt; this.password = c} type=&quot;password&quot; name=&quot;password&quot;/&gt;
+                &lt;button&gt;&#x767B;&#x5F55;&lt;/button&gt;
+            &lt;/form&gt;
+        )
+    }
+}
+
+//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;
+ReactDOM.render(&lt;Login/&gt;, document.getElementById(&apos;test&apos;))
+</code></pre>
+<blockquote>
+<p>&#x95EE;&#x9898;: &#x5982;&#x4F55;&#x963B;&#x6B62;&#x9875;&#x9762;&#x5237;&#x65B0;,&#x4EE5;&#x65B9;&#x4FBF;ajax&#x6765;&#x53D1;&#x9001;&#x8BF7;&#x6C42;</p>
+</blockquote>
+<p> &#x8FD9;&#x6837;&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    handleSubmit = () =&gt; {
+        event.preventDefault();<span class="hljs-comment">// &#x963B;&#x6B62;&#x8868;&#x5355;&#x63D0;&#x4EA4;</span>
+        <span class="hljs-keyword">const</span> {username, password} = <span class="hljs-keyword">this</span>;
+        alert(<span class="hljs-string">`&#x4F60;&#x8F93;&#x5165;&#x7684;&#x7528;&#x6237;&#x540D;&#x662F;:<span class="hljs-subst">${username.value}</span>,&#x4F60;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x662F;:<span class="hljs-subst">${password.value}</span>`</span>);
+    };
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;form action=&quot;http://www.baidu.com&quot; onSubmit={this.handleSubmit}&gt;
+                &#x7528;&#x6237;&#x540D;: &lt;input ref={c =&gt; this.username = c} type=&quot;text&quot; name=&quot;username&quot;/&gt;
+                &#x5BC6;&#x7801;: &lt;input ref={c =&gt; this.password = c} type=&quot;password&quot; name=&quot;password&quot;/&gt;
+                &lt;button&gt;&#x767B;&#x5F55;&lt;/button&gt;
+            &lt;/form&gt;
+        )
+    }
+}
+
+//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;
+ReactDOM.render(&lt;Login/&gt;, document.getElementById(&apos;test&apos;))
+</code></pre>
+<hr>
+<p>&#x9875;&#x9762;&#x4E2D;&#x6240;&#x6709;&#x8F93;&#x5165;&#x7C7B;DOM,&#x4F60;&#x8981;&#x662F;&#x73B0;&#x7528;&#x73B0;&#x53D6;,&#x4F60;&#x5C31;&#x662F;&#x975E;&#x53D7;&#x63A7;&#x7EC4;&#x4EF6;</p>
+<p>&#x73B0;&#x7528;&#x73B0;&#x53D6;: &#x4F60;&#x70B9;&#x767B;&#x5F55;&#x4E4B;&#x540E;: &#x624D;&#x83B7;&#x53D6;&#x7684;&#x503C;</p>
 
                                 
                                 </section>
@@ -1842,7 +1896,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"非受控组件","level":"1.34","depth":1,"next":{"title":"受控组件","level":"1.35","depth":1,"path":"034_受控组件.md","ref":"034_受控组件.md","articles":[]},"previous":{"title":"react中的事件处理","level":"1.33","depth":1,"path":"032_react中的事件处理.md","ref":"032_react中的事件处理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"033_非受控组件.md","mtime":"2021-03-09T00:37:02.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T01:58:07.003Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"非受控组件","level":"1.34","depth":1,"next":{"title":"受控组件","level":"1.35","depth":1,"path":"034_受控组件.md","ref":"034_受控组件.md","articles":[]},"previous":{"title":"react中的事件处理","level":"1.33","depth":1,"path":"032_react中的事件处理.md","ref":"032_react中的事件处理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"033_非受控组件.md","mtime":"2021-03-10T10:18:46.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
