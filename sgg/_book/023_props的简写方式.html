@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>023 · GitBook</title>
+        <title>props的简写方式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -388,12 +388,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.24" data-path="023_.html">
+        <li class="chapter active" data-level="1.24" data-path="023_props的简写方式.html">
             
-                <a href="023_.html">
+                <a href="023_props的简写方式.html">
             
                     
-                    023
+                    props的简写方式
             
                 </a>
             
@@ -1783,7 +1783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >023</a>
+        <a href="." >props的简写方式</a>
     </h1>
 </div>
 
@@ -1798,7 +1798,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="023md">023_.md</h1>
+                                <h1 id="023props&#x7684;&#x7B80;&#x5199;&#x65B9;&#x5F0F;">023_props&#x7684;&#x7B80;&#x5199;&#x65B9;&#x5F0F;</h1>
+<p><img src="img/image-20210310093216243.png" alt="image-20210310093216243"></p>
+<p>&#x95EE;&#x9898;&#x5206;&#x6790;</p>
+<blockquote>
+<p>&#x4F60;&#x5B9A;&#x4E49;&#x7684;Person&#x7C7B;</p>
+<p>&#x8FD8;&#x8981;&#x5728;&#x5916;&#x9762;&#x6765;&#x8FDB;&#x884C;&#x5C5E;&#x6027;&#x7684;&#x9650;&#x5236;</p>
+<p>&#x8FD9;&#x5C31;&#x4E0D;&#x592A;&#x597D;</p>
+<p>&#x770B;&#x770B;&#x80FD;&#x4E0D;&#x80FD;&#x653E;&#x5230;&#x91CC;&#x9762;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-comment">// TODO &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    state = {name: <span class="hljs-string">&apos;tom&apos;</span>, age: <span class="hljs-string">&quot;18&quot;</span>, sex: <span class="hljs-string">&quot;&#x5973;&quot;</span>}
+
+    render() {
+        <span class="hljs-keyword">const</span> {name, age, sex} = <span class="hljs-keyword">this</span>.props
+        <span class="hljs-comment">// props &#x662F;&#x53EA;&#x8BFB;&#x7684;</span>
+        <span class="hljs-keyword">this</span>.props.name = <span class="hljs-string">&apos;jack&apos;</span>    <span class="hljs-comment">// &#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4F1A;&#x62A5;&#x9519;,&#x56E0;&#x4E3A;props&#x662F;&#x652F;&#x961F;&#x7684;</span>
+        <span class="hljs-comment">// &#x4ECE;&#x7EC4;&#x5EFA;&#x5916;&#x90E8; &#x6765;&#x7ED9;&#x4ED6;&#x4FE1;&#x606F;,&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x7528;state &#x6765;&#x7ED9;&#x4ED6;&#x6570;&#x636E;&#x4FE1;&#x606F;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x59D3;&#x540D;: {name}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x59D3;&#x522B;: {sex}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x5E74;&#x9F84;: {age + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+        )
+        <span class="hljs-comment">// &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt; &#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x4FEE;&#x6539;,&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;,&#x53EA;&#x6709;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;</span>
+    }
+
+    <span class="hljs-comment">// TODO &#x5BF9;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x7C7B;&#x578B;,&#x5FC5;&#x8981;&#x6027;&#x7684;&#x9650;&#x5236;</span>
+    <span class="hljs-keyword">static</span> prototypes = {
+        name: PropTypes.string.isRequired,    <span class="hljs-comment">// &#x5B57;&#x7B26;&#x4E32; &#x5FC5;&#x987B;&#x4F20;</span>
+        sex: PropTypes.string,<span class="hljs-comment">// &#x9650;&#x5236;rex&#x6CA1;&#x8BF4;&#x5FC5;&#x4F20;</span>
+        age: PropTypes.number,<span class="hljs-comment">// &#x9650;&#x5236; age&#x4E3A;&#x6570;&#x503C;</span>
+        speak: PropTypes.func,<span class="hljs-comment">// &#x9650;&#x5236;speak&#x4E3A;&#x51FD;&#x6570;</span>
+    }
+    <span class="hljs-comment">// TODO &#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x503C;</span>
+    <span class="hljs-keyword">static</span> defaultProps = {
+        sex: <span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-comment">// sex&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x96BE;</span>
+        age: <span class="hljs-number">18</span>  <span class="hljs-comment">// &#x5E74;&#x9F84; &#x9ED8;&#x8BA4;&#x4E3A;18</span>
+    }
+
+}
+
+
+<span class="hljs-comment">// TODO &#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
+ReactDOM.render(&lt;Person name=&quot;jerry&quot; age={19} sex=&quot;&#x7537;&quot;/&gt;, document.getElementById(&apos;test1&apos;))
+ReactDOM.render(&lt;Person name=&quot;tom&quot; age={17} sex=&quot;&#x5973;&quot;/&gt;, document.getElementById(&apos;test2&apos;))
+ReactDOM.render(&lt;Person {...p}/&gt;, document.getElementById(&apos;test3&apos;))
+
+const p = {name: &apos;nancy&apos;, age: 18, sex: &apos;&#x5973;&apos;}
+ReactDOM.render(&lt;Person {...p}/&gt;, document.getElementById(&apos;test3&apos;))
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x4E0D;&#x5C31;&#x5199;&#x5728;&#x91CC;&#x9762;&#x4E86;&#x4E48;</p>
+</blockquote>
+<p><img src="img/image-20210310094005022.png" alt="image-20210310094005022"></p>
+<blockquote>
+<p>&#x73B0;&#x5728;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E00;&#x6298;&#x53E0;&#x5C31;&#x6E05;&#x6670;&#x4E86;&#x4E0D;&#x5C11;&#x4E86;</p>
+<p>&#x548C;&#x7C7B;&#x76F8;&#x5173;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x653E;&#x5230;&#x4E86;&#x7C7B;&#x91CC;&#x9762;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -1842,7 +1901,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"023","level":"1.24","depth":1,"next":{"title":"类式组件中的构造器与","level":"1.25","depth":1,"path":"024_类式组件中的构造器与.md","ref":"024_类式组件中的构造器与.md","articles":[]},"previous":{"title":"对props进行限制","level":"1.23","depth":1,"path":"022_对props进行限制.md","ref":"022_对props进行限制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"023_.md","mtime":"2021-03-08T11:46:04.567Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-09T13:55:00.843Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"props的简写方式","level":"1.24","depth":1,"next":{"title":"类式组件中的构造器与","level":"1.25","depth":1,"path":"024_类式组件中的构造器与.md","ref":"024_类式组件中的构造器与.md","articles":[]},"previous":{"title":"对props进行限制","level":"1.23","depth":1,"path":"022_对props进行限制.md","ref":"022_对props进行限制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"023_props的简写方式.md","mtime":"2021-03-10T01:40:47.969Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T01:58:07.003Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
