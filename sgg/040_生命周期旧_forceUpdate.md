@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>2_react生命周期(旧)</title>
-</head>
-<body>
-<!-- 准备好一个“容器” -->
-<div id="test"></div>
+# 040_生命周期(旧)_forceU
 
-<!-- 引入react核心库 -->
-<script type="text/javascript" src="../js/react.development.js"></script>
-<!-- 引入react-dom，用于支持react操作DOM -->
-<script type="text/javascript" src="../js/react-dom.development.js"></script>
-<!-- 引入babel，用于将jsx转为js -->
-<script type="text/javascript" src="../js/babel.min.js"></script>
 
-<script type="text/babel">
+> 强制更新 
+>
+> 你可以不对组件里面的状态做更改,也可以更新组件的渲染
 
+`forceUpdate()`
+
+正常更新需要走阀门,但是强制更新,他不走阀门
+
+```javascript
 // 定义组件
 class Count extends React.Component {
 
@@ -97,6 +90,4 @@ class Count extends React.Component {
 
 //渲染组件
 ReactDOM.render(<Count/>, document.getElementById('test'))
-</script>
-</body>
-</html>
+```
