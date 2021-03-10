@@ -1,6 +1,3 @@
-# 02022_对props进行限制
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -62,7 +59,7 @@ react 中 他重新封装了这些事件, 他
         // name:React.PropTypes.string
         // React 有点臃肿 这么整
         name: PropTypes.string.isRequired,    // 字符串 必须传
-        sex: PropTypes.string,// 限制rex没说必传 
+        sex: PropTypes.string,// 限制rex没说必传
         age: PropTypes.number,// 限制 age为数值
         speak:PropTypes.func,// 限制speak为函数
     }
@@ -83,36 +80,3 @@ react 中 他重新封装了这些事件, 他
 
 </body>
 </html>
-
-```
-
-
-
-```javascript
-ar ReactPropTypes = {
-                    array: shim,
-                    bool: shim,
-                    func: shim,
-                    number: shim,
-                    object: shim,
-                    string: shim,
-                    symbol: shim,
-
-                    any: shim,
-                    arrayOf: getShim,
-                    element: shim,
-                    elementType: shim,
-                    instanceOf: getShim,
-                    node: shim,
-                    objectOf: getShim,
-                    oneOf: getShim,
-                    oneOfType: getShim,
-                    shape: getShim,
-                    exact: getShim,
-
-                    checkPropTypes: emptyFunctionWithReset,
-                    resetWarningCache: emptyFunction
-                };
-```
-
->function 应该用func
