@@ -45,7 +45,7 @@
 - [生命周期(旧)_父组件render流程](041_生命周期旧_父组件render流程.md)
 - [总结生命周期(旧)](042_总结生命周期旧.md)
 - [对比新旧生命周期](043_对比新旧生命周期.md)
-- [getDerivedStateFrom](044_getDerivedStateFrom.md)
+- [getDerivedStateFromProps](044_getDerivedStateFromProps.md)
 - [getSna](045_getSna.md)
 - [getSna](046_getSna.md)
 - [总结生命周期(新)](047_总结生命周期新.md)

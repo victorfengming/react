@@ -46,6 +46,12 @@
             // 阀门关了也能更新
         };
 
+        static getDerivedStateFromProps(props,state) {
+            // 如果当真
+            console.log("get|DerivedStateFromProps",props,state);
+            return {count:108};
+        }
+
         // 组件将要挂载的钩子
         componentWillMount() {
             console.log("componentWillMount");
@@ -79,7 +85,7 @@
         }
 
         render() {
-            console.log("render")
+            console.log("render");
             const {count} = this.state;
             return (
                 <div>
@@ -135,7 +141,7 @@
 
     // A是父组件 B是子组件
     //渲染组件
-    ReactDOM.render(<Count/>, document.getElementById('test'))
+    ReactDOM.render(<Count count={189}/>, document.getElementById('test'))
 </script>
 </body>
 </html>
