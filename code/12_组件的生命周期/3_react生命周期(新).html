@@ -52,8 +52,11 @@
             return null;
         }
 
-        static getSnapshotBeforeUpdate() {
+        getSnapshotBeforeUpdate() {
             console.log("getSnapshotBeforeUpdate");
+            // 这里你想要 快照 什么 你就传什么
+            // 比如你传一个视窗的高度,滚轮的位置 ...
+            return "抽车位";
         }
         // 组件将要挂载的钩子
         componentWillMount() {
@@ -83,8 +86,9 @@
         }
 
         // 组件将要更新的钩子
-        componentDidUpdate() {
-            console.log("componentDidUpdate");
+        componentDidUpdate(preProps,preState,snapshotValue) {
+            // 用于获取页面改变之前的一些钩子
+            console.log("componentDidUpdate>>>",preProps,preState,snapshotValue);
         }
 
         render() {
