@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1798,7 +1798,153 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="048dom&#x7684;diffing&#x7B97;&#x6CD5;md">048_DOM&#x7684;diffing&#x7B97;&#x6CD5;.md</h1>
+                                <h1 id="048dom&#x7684;diffing&#x7B97;&#x6CD5;">048_DOM&#x7684;diffing&#x7B97;&#x6CD5;</h1>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Time</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    state = {date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}
+
+    componentDidMount () {
+        setInterval(() =&gt; {
+            <span class="hljs-keyword">this</span>.setState({
+                date: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+            })
+        }, <span class="hljs-number">1000</span>)
+    }
+
+    render () {
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;h1&gt;hello&lt;/h1&gt;
+                &lt;input type=&quot;text&quot;/&gt;
+                &lt;span&gt;
+                    &#x73B0;&#x5728;&#x662F;&#xFF1A;{this.state.date.toTimeString()}
+                    &lt;input type=&quot;text&quot;/&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+ReactDOM.render(&lt;Time/&gt;,document.getElementById(&apos;test&apos;))
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">/*
+ &#x7ECF;&#x5178;&#x9762;&#x8BD5;&#x9898;:
+    1). react/vue&#x4E2D;&#x7684;key&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#xFF1F;&#xFF08;key&#x7684;&#x5185;&#x90E8;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#xFF09;
+    2). &#x4E3A;&#x4EC0;&#x4E48;&#x904D;&#x5386;&#x5217;&#x8868;&#x65F6;&#xFF0C;key&#x6700;&#x597D;&#x4E0D;&#x8981;&#x7528;index?
+
+          1. &#x865A;&#x62DF;DOM&#x4E2D;key&#x7684;&#x4F5C;&#x7528;&#xFF1A;
+                  1). &#x7B80;&#x5355;&#x7684;&#x8BF4;: key&#x662F;&#x865A;&#x62DF;DOM&#x5BF9;&#x8C61;&#x7684;&#x6807;&#x8BC6;, &#x5728;&#x66F4;&#x65B0;&#x663E;&#x793A;&#x65F6;key&#x8D77;&#x7740;&#x6781;&#x5176;&#x91CD;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x3002;
+
+                  2). &#x8BE6;&#x7EC6;&#x7684;&#x8BF4;: &#x5F53;&#x72B6;&#x6001;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;react&#x4F1A;&#x6839;&#x636E;&#x3010;&#x65B0;&#x6570;&#x636E;&#x3011;&#x751F;&#x6210;&#x3010;&#x65B0;&#x7684;&#x865A;&#x62DF;DOM&#x3011;, 
+                                              &#x968F;&#x540E;React&#x8FDB;&#x884C;&#x3010;&#x65B0;&#x865A;&#x62DF;DOM&#x3011;&#x4E0E;&#x3010;&#x65E7;&#x865A;&#x62DF;DOM&#x3011;&#x7684;diff&#x6BD4;&#x8F83;&#xFF0C;&#x6BD4;&#x8F83;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;
+
+                                  a. &#x65E7;&#x865A;&#x62DF;DOM&#x4E2D;&#x627E;&#x5230;&#x4E86;&#x4E0E;&#x65B0;&#x865A;&#x62DF;DOM&#x76F8;&#x540C;&#x7684;key&#xFF1A;
+                                              (1).&#x82E5;&#x865A;&#x62DF;DOM&#x4E2D;&#x5185;&#x5BB9;&#x6CA1;&#x53D8;, &#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x771F;&#x5B9E;DOM
+                                              (2).&#x82E5;&#x865A;&#x62DF;DOM&#x4E2D;&#x5185;&#x5BB9;&#x53D8;&#x4E86;, &#x5219;&#x751F;&#x6210;&#x65B0;&#x7684;&#x771F;&#x5B9E;DOM&#xFF0C;&#x968F;&#x540E;&#x66FF;&#x6362;&#x6389;&#x9875;&#x9762;&#x4E2D;&#x4E4B;&#x524D;&#x7684;&#x771F;&#x5B9E;DOM
+
+                                  b. &#x65E7;&#x865A;&#x62DF;DOM&#x4E2D;&#x672A;&#x627E;&#x5230;&#x4E0E;&#x65B0;&#x865A;&#x62DF;DOM&#x76F8;&#x540C;&#x7684;key
+                                              &#x6839;&#x636E;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x771F;&#x5B9E;DOM&#xFF0C;&#x968F;&#x540E;&#x6E32;&#x67D3;&#x5230;&#x5230;&#x9875;&#x9762;
+
+          2. &#x7528;index&#x4F5C;&#x4E3A;key&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x53D1;&#x7684;&#x95EE;&#x9898;&#xFF1A;
+                              1. &#x82E5;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#xFF1A;&#x9006;&#x5E8F;&#x6DFB;&#x52A0;&#x3001;&#x9006;&#x5E8F;&#x5220;&#x9664;&#x7B49;&#x7834;&#x574F;&#x987A;&#x5E8F;&#x64CD;&#x4F5C;:
+                                              &#x4F1A;&#x4EA7;&#x751F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x771F;&#x5B9E;DOM&#x66F4;&#x65B0; ==&gt; &#x754C;&#x9762;&#x6548;&#x679C;&#x6CA1;&#x95EE;&#x9898;, &#x4F46;&#x6548;&#x7387;&#x4F4E;&#x3002;
+
+                              2. &#x5982;&#x679C;&#x7ED3;&#x6784;&#x4E2D;&#x8FD8;&#x5305;&#x542B;&#x8F93;&#x5165;&#x7C7B;&#x7684;DOM&#xFF1A;
+                                              &#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;DOM&#x66F4;&#x65B0; ==&gt; &#x754C;&#x9762;&#x6709;&#x95EE;&#x9898;&#x3002;
+
+                              3. &#x6CE8;&#x610F;&#xFF01;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x9006;&#x5E8F;&#x6DFB;&#x52A0;&#x3001;&#x9006;&#x5E8F;&#x5220;&#x9664;&#x7B49;&#x7834;&#x574F;&#x987A;&#x5E8F;&#x64CD;&#x4F5C;&#xFF0C;
+                                  &#x4EC5;&#x7528;&#x4E8E;&#x6E32;&#x67D3;&#x5217;&#x8868;&#x7528;&#x4E8E;&#x5C55;&#x793A;&#xFF0C;&#x4F7F;&#x7528;index&#x4F5C;&#x4E3A;key&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x3002;
+
+          3. &#x5F00;&#x53D1;&#x4E2D;&#x5982;&#x4F55;&#x9009;&#x62E9;key?:
+                              1.&#x6700;&#x597D;&#x4F7F;&#x7528;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x4F5C;&#x4E3A;key, &#x6BD4;&#x5982;id&#x3001;&#x624B;&#x673A;&#x53F7;&#x3001;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x3001;&#x5B66;&#x53F7;&#x7B49;&#x552F;&#x4E00;&#x503C;&#x3002;
+                              2.&#x5982;&#x679C;&#x786E;&#x5B9A;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5C55;&#x793A;&#x6570;&#x636E;&#xFF0C;&#x7528;index&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;
+ */</span>
+
+  <span class="hljs-comment">/* 
+      &#x6162;&#x52A8;&#x4F5C;&#x56DE;&#x653E;----&#x4F7F;&#x7528;index&#x7D22;&#x5F15;&#x503C;&#x4F5C;&#x4E3A;key
+
+          &#x521D;&#x59CB;&#x6570;&#x636E;&#xFF1A;
+                  {id:1,name:&apos;&#x5C0F;&#x5F20;&apos;,age:18},
+                  {id:2,name:&apos;&#x5C0F;&#x674E;&apos;,age:19},
+          &#x521D;&#x59CB;&#x7684;&#x865A;&#x62DF;DOM&#xFF1A;
+                  &lt;li key=0&gt;&#x5C0F;&#x5F20;---18&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=1&gt;&#x5C0F;&#x674E;---19&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+
+          &#x66F4;&#x65B0;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF1A;
+                  {id:3,name:&apos;&#x5C0F;&#x738B;&apos;,age:20},
+                  {id:1,name:&apos;&#x5C0F;&#x5F20;&apos;,age:18},
+                  {id:2,name:&apos;&#x5C0F;&#x674E;&apos;,age:19},
+          &#x66F4;&#x65B0;&#x6570;&#x636E;&#x540E;&#x7684;&#x865A;&#x62DF;DOM&#xFF1A;
+                  &lt;li key=0&gt;&#x5C0F;&#x738B;---20&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=1&gt;&#x5C0F;&#x5F20;---18&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=2&gt;&#x5C0F;&#x674E;---19&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+
+  -----------------------------------------------------------------
+
+  &#x6162;&#x52A8;&#x4F5C;&#x56DE;&#x653E;----&#x4F7F;&#x7528;id&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x4F5C;&#x4E3A;key
+
+          &#x521D;&#x59CB;&#x6570;&#x636E;&#xFF1A;
+                  {id:1,name:&apos;&#x5C0F;&#x5F20;&apos;,age:18},
+                  {id:2,name:&apos;&#x5C0F;&#x674E;&apos;,age:19},
+          &#x521D;&#x59CB;&#x7684;&#x865A;&#x62DF;DOM&#xFF1A;
+                  &lt;li key=1&gt;&#x5C0F;&#x5F20;---18&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=2&gt;&#x5C0F;&#x674E;---19&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+
+          &#x66F4;&#x65B0;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF1A;
+                  {id:3,name:&apos;&#x5C0F;&#x738B;&apos;,age:20},
+                  {id:1,name:&apos;&#x5C0F;&#x5F20;&apos;,age:18},
+                  {id:2,name:&apos;&#x5C0F;&#x674E;&apos;,age:19},
+          &#x66F4;&#x65B0;&#x6570;&#x636E;&#x540E;&#x7684;&#x865A;&#x62DF;DOM&#xFF1A;
+                  &lt;li key=3&gt;&#x5C0F;&#x738B;---20&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=1&gt;&#x5C0F;&#x5F20;---18&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                  &lt;li key=2&gt;&#x5C0F;&#x674E;---19&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+
+
+   */</span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
+
+      state = {
+          persons:[
+              {id:<span class="hljs-number">1</span>,name:<span class="hljs-string">&apos;&#x5C0F;&#x5F20;&apos;</span>,age:<span class="hljs-number">18</span>},
+              {id:<span class="hljs-number">2</span>,name:<span class="hljs-string">&apos;&#x5C0F;&#x674E;&apos;</span>,age:<span class="hljs-number">19</span>},
+          ]
+      }
+
+      add = ()=&gt;{
+          <span class="hljs-keyword">const</span> {persons} = <span class="hljs-keyword">this</span>.state
+          <span class="hljs-keyword">const</span> p = {id:persons.length+<span class="hljs-number">1</span>,name:<span class="hljs-string">&apos;&#x5C0F;&#x738B;&apos;</span>,age:<span class="hljs-number">20</span>}
+          <span class="hljs-keyword">this</span>.setState({persons:[p,...persons]})
+      }
+
+      render(){
+          <span class="hljs-keyword">return</span> (
+              &lt;div&gt;
+                  &lt;h2&gt;&#x5C55;&#x793A;&#x4EBA;&#x5458;&#x4FE1;&#x606F;&lt;/h2&gt;
+                  &lt;button onClick={this.add}&gt;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5C0F;&#x738B;&lt;/button&gt;
+                  &lt;h3&gt;&#x4F7F;&#x7528;index&#xFF08;&#x7D22;&#x5F15;&#x503C;&#xFF09;&#x4F5C;&#x4E3A;key&lt;/h3&gt;
+                  &lt;ul&gt;
+                      {
+                          this.state.persons.map((personObj,index)=&gt;{
+                              return &lt;li key={index}&gt;{personObj.name}---{personObj.age}&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                          })
+                      }
+                  &lt;/ul&gt;
+                  &lt;hr/&gt;
+                  &lt;hr/&gt;
+                  &lt;h3&gt;&#x4F7F;&#x7528;id&#xFF08;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#xFF09;&#x4F5C;&#x4E3A;key&lt;/h3&gt;
+                  &lt;ul&gt;
+                      {
+                          this.state.persons.map((personObj)=&gt;{
+                              return &lt;li key={personObj.id}&gt;{personObj.name}---{personObj.age}&lt;input type=&quot;text&quot;/&gt;&lt;/li&gt;
+                          })
+                      }
+                  &lt;/ul&gt;
+              &lt;/div&gt;
+          )
+      }
+  }
+
+  ReactDOM.render(&lt;Person/&gt;,document.getElementById(&apos;test&apos;)
+</code></pre>
 
                                 
                                 </section>
@@ -1842,7 +1988,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DOM的diffing算法","level":"1.49","depth":1,"next":{"title":"初始化react脚手架","level":"1.50","depth":1,"path":"049_初始化react脚手架.md","ref":"049_初始化react脚手架.md","articles":[]},"previous":{"title":"总结生命周期(新)","level":"1.48","depth":1,"path":"047_总结生命周期新.md","ref":"047_总结生命周期新.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"048_DOM的diffing算法.md","mtime":"2021-03-08T11:46:04.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DOM的diffing算法","level":"1.49","depth":1,"next":{"title":"初始化react脚手架","level":"1.50","depth":1,"path":"049_初始化react脚手架.md","ref":"049_初始化react脚手架.md","articles":[]},"previous":{"title":"总结生命周期(新)","level":"1.48","depth":1,"path":"047_总结生命周期新.md","ref":"047_总结生命周期新.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"048_DOM的diffing算法.md","mtime":"2021-03-11T08:13:56.116Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

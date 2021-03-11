@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>生命周期(旧)_forceU · GitBook</title>
+        <title>getDerivedStateFromProps · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="041_生命周期旧_父组件render流程.html" />
+    <link rel="next" href="045_getSnapshotBeforeUpdate.html" />
     
     
-    <link rel="prev" href="039_生命周期旧_setState流程.html" />
+    <link rel="prev" href="043_对比新旧生命周期.html" />
     
 
     </head>
@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter active" data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1783,7 +1783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >生命周期(旧)_forceU</a>
+        <a href="." >getDerivedStateFromProps</a>
     </h1>
 </div>
 
@@ -1798,7 +1798,101 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="040&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;forceumd">040_&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)_forceU.md</h1>
+                                <h1 id="044getderivedstatefromprops">044_getDerivedStateFromProps</h1>
+<p><code>getDerivedStateFromProps</code>&#x7FFB;&#x8BD1;&#x4E3A;<code>&#x83B7;&#x53D6;&#x6D3E;&#x751F;&#x72B6;&#x6001;&#x4ECE;props&#x4E2D;</code></p>
+<h2 id="&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;">&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;</h2>
+<p>&#x4F60;&#x5BB6;&#x8FD9;&#x4E48;&#x4E00;&#x884C;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-javascript">getDerivedStateFromProps() {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getDerivedStateFromProps&quot;</span>);
+}
+</code></pre>
+<blockquote>
+<p>&#x7136;&#x540E;&#x5C31;&#x6709;&#x8B66;&#x544A;&#x4E86;</p>
+</blockquote>
+<pre><code>Warning: Count: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.
+    at Count (&lt;anonymous&gt;:17:9)
+</code></pre><blockquote>
+<p>&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x4E0D;&#x5E94;&#x8BE5;&#x7ED9;&#x5B9E;&#x4F8B;&#x7528;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getDerivedStateFromProps&quot;</span>);
+}
+</code></pre>
+<blockquote>
+<p>&#x73B0;&#x5728;&#x62A5;&#x8B66;&#x544A;&#x8FD9;&#x4E2A;</p>
+</blockquote>
+<pre><code>Warning: Count.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.
+    at Count (&lt;anonymous&gt;:17:9)
+</code></pre><blockquote>
+<p>&#x5C31;&#x662F;&#x8BF4;</p>
+<p>&#x4F60;&#x5FC5;&#x987B;&#x8981;&#x7ED9;&#x6211;&#x8FD4;&#x56DE;, 1. &#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5BF9;&#x8C61; 2, &#x8FD4;&#x56DE; null </p>
+<p>&#x7136;&#x800C;&#x4F60;&#x73B0;&#x5728;&#x8FD4;&#x56DE; undefined &#x5C31;&#x4E0D;&#x884C;</p>
+</blockquote>
+<p>&#x4EE3;&#x7801;&#x6210;&#x8FD9;&#x6837;&#x4E86;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+}
+</code></pre>
+<blockquote>
+<p>&#x90A3;&#x4ED6;&#x8BA9;&#x6211;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5BF9;&#x8C61;</p>
+<p>&#x6211;&#x5C31;&#x6309;&#x4ED6;&#x8BF4;&#x7684;&#x6765;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>);
+    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4F60;&#x7684;&#x9875;&#x9762;</p>
+<p><img src="044_getDerivedStateFromProps/1615381094342.png" alt="1615381094342"></p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x80FD;&#x591F;&#x6307;&#x5B9A;&#x72B6;&#x6001;,&#x4F46;&#x662F;&#x6211;&#x73B0;&#x5728;+1 &#x574F;&#x4E86;</p>
+<p>&#x6362;&#x53E5;&#x8BDD;&#x8BF4;,&#x4F60;&#x8FD9;&#x4E2A;&#x4E00;&#x5355;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x5BF9;&#x8C61;,&#x4ED6;&#x5C31;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#x4E86;,(&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x5931;&#x6548;)</p>
+<blockquote>
+<p>&#x6240;&#x4EE5;&#x4EC0;&#x4E48;&#x662F;&#x6D3E;&#x751F;?</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps(props) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>,props);
+    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6253;&#x5370;&#x662F;&#x7A7A;</p>
+<p>&#x90A3;&#x6211;&#x8981;&#x662F;&#x7ED9;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span> <span class="hljs-attr">count</span>=<span class="hljs-string">{189}</span>/&gt;</span>, document.getElementById(&apos;test&apos;))
+</span></code></pre>
+<p><img src="044_getDerivedStateFromProps/1615381324806.png" alt="1615381324806"></p>
+<blockquote>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762; &#x628A; props &#x8FD4;&#x56DE;&#x4E86;,&#x6240;&#x4EE5;&#x8BF4;,&#x8FD9;&#x4E2A;props&#x5C31;&#x5F53;&#x6210;&#x4E86; &#x72B6;&#x6001;&#x7528;&#x4E86;</p>
+</blockquote>
+<p>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7528;?&#x5462;,&#x770B;&#x4E00;&#x4E0B;<a href="https://react.docschina.org/docs/react-component.html#static-getderivedstatefromprops" target="_blank">&#x5B98;&#x65B9;</a>&#x8BF4;&#x7684;</p>
+<p> <code>getDerivedStateFromProps</code> &#x4F1A;&#x5728;&#x8C03;&#x7528; render &#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x521D;&#x59CB;&#x6302;&#x8F7D;&#x53CA;&#x540E;&#x7EED;&#x66F4;&#x65B0;&#x65F6;&#x90FD;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x5B83;&#x5E94;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x66F4;&#x65B0; state&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE; null &#x5219;&#x4E0D;&#x66F4;&#x65B0;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002; </p>
+<p> &#x6B64;&#x65B9;&#x6CD5;&#x9002;&#x7528;&#x4E8E;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state" target="_blank">&#x7F55;&#x89C1;&#x7684;&#x7528;&#x4F8B;</a>&#xFF0C;&#x5373; state &#x7684;&#x503C;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53D6;&#x51B3;&#x4E8E; props&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5B9E;&#x73B0; `` &#x7EC4;&#x4EF6;&#x53EF;&#x80FD;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x8BE5;&#x7EC4;&#x4EF6;&#x4F1A;&#x6BD4;&#x8F83;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x4E0E;&#x4E0B;&#x4E00;&#x7EC4;&#x4EF6;&#xFF0C;&#x4EE5;&#x51B3;&#x5B9A;&#x9488;&#x5BF9;&#x54EA;&#x4E9B;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x8F6C;&#x573A;&#x52A8;&#x753B;&#x3002; </p>
+<blockquote>
+<p>&#x4F60;&#x53EA;&#x8981;&#x628A;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x52A0;&#x4E0A;&#x540E;,&#x4F60;&#x7684;&#x72B6;&#x6001;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x7B49;&#x4E8E;props,&#x90A3;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x66F4;&#x6539;&#x554A;,&#x4EC0;&#x4E48;+1&#x554A;&#x90FD;&#x5931;&#x53BB;&#x6548;&#x679C;&#x4E86;</p>
+</blockquote>
+<p>&#x6D3E;&#x751F;&#x72B6;&#x6001;&#x4F1A;&#x5BFC;&#x81F4;&#x4EE3;&#x7801;&#x5197;&#x4F59;&#xFF0C;&#x5E76;&#x4F7F;&#x7EC4;&#x4EF6;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x3002; <a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html" target="_blank">&#x786E;&#x4FDD;&#x4F60;&#x5DF2;&#x719F;&#x6089;&#x8FD9;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF1A;</a></p>
+<ul>
+<li>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;<strong>&#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;</strong>&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6570;&#x636E;&#x63D0;&#x53D6;&#x6216;&#x52A8;&#x753B;&#xFF09;&#x4EE5;&#x54CD;&#x5E94; props &#x4E2D;&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x8BF7;&#x6539;&#x7528; <a href="https://react.docschina.org/docs/react-component.html#componentdidupdate" target="_blank"><code>componentDidUpdate</code></a>&#x3002;</li>
+<li>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x5728; <strong>prop &#x66F4;&#x6539;&#x65F6;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x67D0;&#x4E9B;&#x6570;&#x636E;</strong>&#xFF0C;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization" target="_blank">&#x8BF7;&#x4F7F;&#x7528; memoization helper &#x4EE3;&#x66FF;</a>&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x60F3;<strong>&#x5728; prop &#x66F4;&#x6539;&#x65F6;&#x201C;&#x91CD;&#x7F6E;&#x201D;&#x67D0;&#x4E9B; state</strong>&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x4F7F;&#x7EC4;&#x4EF6;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component" target="_blank">&#x5B8C;&#x5168;&#x53D7;&#x63A7;</a>&#x6216;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key" target="_blank">&#x4F7F;&#x7528; <code>key</code> &#x4F7F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x4E0D;&#x53D7;&#x63A7;</a> &#x4EE3;&#x66FF;&#x3002;</li>
+</ul>
+<h2 id="&#x4E00;&#x53E5;&#x8BDD;">&#x4E00;&#x53E5;&#x8BDD;</h2>
+<p>&#x4E86;&#x89E3;&#x5373;&#x53EF;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x82E5;state &#x7684;&#x503C;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;props,&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;getDerivedStateFromProps</span>
+<span class="hljs-keyword">static</span> getDerivedStateFromProps(props,state) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>,props,state);
+    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
+}
+<span class="hljs-comment">// &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x7528;&#x5462;,&#x4F60;&#x770B;&#x4F60;&#x8981;&#x662F; &#x72B6;&#x6001;state&#x90FD;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x4E86;,&#x90A3;&#x4F60;&#x76F4;&#x63A5;&#x5728;&#x6784;&#x9020;&#x5668;&#x91CC;&#x9762;&#x7528;</span>
+<span class="hljs-comment">// &#x90A3;&#x4E0D;&#x4E5F;&#x6210;&#x4E86;&#x4E48; &#x8FD8;&#x662F;&#x4E0D;&#x7528; &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x554A;</span>
+<span class="hljs-comment">// &#x5C31;&#x8FD9;&#x94A9;&#x5B50;, &#x4ED6;&#x6CA1;&#x5565;&#x592A;&#x5927;&#x610F;&#x4E49;,&#x5C31;&#x7ED9;&#x4ED6;&#x5E72;&#x6389;&#x90FD;&#x884C;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1826,12 +1920,12 @@
 
             
                 
-                <a href="039_生命周期旧_setState流程.html" class="navigation navigation-prev " aria-label="Previous page: 生命周期(旧)_setState流程">
+                <a href="043_对比新旧生命周期.html" class="navigation navigation-prev " aria-label="Previous page: 对比新旧生命周期">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="041_生命周期旧_父组件render流程.html" class="navigation navigation-next " aria-label="Next page: 生命周期(旧)_父组件render流程">
+                <a href="045_getSnapshotBeforeUpdate.html" class="navigation navigation-next " aria-label="Next page: getSnapshotBeforeUpdate">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1842,7 +1936,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_forceU","level":"1.41","depth":1,"next":{"title":"生命周期(旧)_父组件render流程","level":"1.42","depth":1,"path":"041_生命周期旧_父组件render流程.md","ref":"041_生命周期旧_父组件render流程.md","articles":[]},"previous":{"title":"生命周期(旧)_setState流程","level":"1.40","depth":1,"path":"039_生命周期旧_setState流程.md","ref":"039_生命周期旧_setState流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"040_生命周期旧_forceU.md","mtime":"2021-03-08T11:46:04.575Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"getDerivedStateFromProps","level":"1.45","depth":1,"next":{"title":"getSnapshotBeforeUpdate","level":"1.46","depth":1,"path":"045_getSnapshotBeforeUpdate.md","ref":"045_getSnapshotBeforeUpdate.md","articles":[]},"previous":{"title":"对比新旧生命周期","level":"1.44","depth":1,"path":"043_对比新旧生命周期.md","ref":"043_对比新旧生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"044_getDerivedStateFromProps.md","mtime":"2021-03-11T05:40:58.940Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

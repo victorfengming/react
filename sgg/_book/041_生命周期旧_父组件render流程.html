@@ -60,7 +60,7 @@
     <link rel="next" href="042_总结生命周期旧.html" />
     
     
-    <link rel="prev" href="040_生命周期旧_forceU.html" />
+    <link rel="prev" href="040_生命周期旧_forceUpdate.html" />
     
 
     </head>
@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1798,7 +1798,83 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="041&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7236;&#x7EC4;&#x4EF6;render&#x6D41;&#x7A0B;md">041<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7236;&#x7EC4;&#x4EF6;render&#x6D41;&#x7A0B;.md</h1>
+                                <h1 id="041&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7236;&#x7EC4;&#x4EF6;render&#x6D41;&#x7A0B;">041<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7236;&#x7EC4;&#x4EF6;render&#x6D41;&#x7A0B;</h1>
+<blockquote>
+<p>componentWillReceiveProps&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x673A;</p>
+</blockquote>
+<ul>
+<li>&#x6709;&#x4EBA;&#x5EFA;&#x8BAE;&#x4ED6;&#x6539;&#x6210; componentWillReceiveNewProps</li>
+<li>&#x4EE5;&#x4E3A; &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x63A5;&#x6536;&#x65B0;&#x7684; props ,&#x4E00;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x6B21;&#x4F20;&#x7684;&#x4E0D;&#x7B97;</li>
+<li>&#x4F46;&#x662F;&#x6211;&#x8FD9;&#x8FB9;&#x6211;&#x8FD8;&#x662F;&#x8C03;&#x7528;&#x4E86;</li>
+</ul>
+<pre><code class="lang-javascript">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+        <span class="hljs-comment">// &#x5B58;&#x50A8;&#x9A91;&#x8F66;&#x7684;&#x540D;&#x5B57;</span>
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+        state = {carName: <span class="hljs-string">&apos;BMW&apos;</span>}
+        changeCar = () =&gt; {
+            <span class="hljs-comment">// &#x66F4;&#x65B0;&#x8F66;&#x4F60;&#x7684;&#x4FE1;&#x606F;</span>
+            <span class="hljs-keyword">this</span>.setState({carName: <span class="hljs-string">&quot;&#x5965;&#x8FEA;&quot;</span>})
+        };
+
+        render() {
+            <span class="hljs-keyword">return</span> (
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#x6211;&#x662F;A&#x7EC4;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.changeCar}</span>&gt;</span>&#x6362;&#x8F66;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                    {/*&#x7136;&#x540E;B&#x7EC4;&#x4EF6;&#x6765;&#x5C55;&#x793A;&#x8FD9;&#x4E2A;&#x9A91;&#x8F66;&#x7684;&#x4FE1;&#x606F;*/}
+                    <span class="hljs-tag">&lt;<span class="hljs-name">B</span> <span class="hljs-attr">carName</span>=<span class="hljs-string">{this.state.carName}</span>/&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            )
+        }
+    }
+
+    class B extends React.Component {
+        // &#x8FD9;&#x4E2A;&#x6709;&#x7455;&#x75B5;
+        /*
+        * &#x6709;&#x4EBA;&#x5EFA;&#x8BAE;&#x4ED6;&#x6539;&#x6210; componentWillReceiveNewProps
+        * &#x4EE5;&#x4E3A; &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x63A5;&#x6536;&#x65B0;&#x7684; props ,&#x4E00;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x6B21;&#x4F20;&#x7684;&#x4E0D;&#x7B97;
+        * &#x4F46;&#x662F;&#x6211;&#x8FD9;&#x8FB9;&#x6211;&#x8FD8;&#x662F;&#x8C03;&#x7528;&#x4E86;
+        * */
+
+        // &#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x53EB;&#x505A;: &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x63A5;&#x6536;&#x65B0;&#x7684;props&#x7684;&#x94A9;&#x5B50;
+        componentWillReceiveProps(props) {
+            console.log(&quot;componentWillReceiveProps&quot;, props);
+        }
+
+
+        // &#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x7684;&#x9600;&#x95E8;
+        shouldComponentUpdate() {
+            console.log(&quot;shouldComponentUpdate&quot;);
+            // &#x8FD9;&#x91CC; &#x5FC5;&#x987B;&#x8981;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; &#x5E03;&#x5C14;&#x503C;
+            return true;    // &#x8FD4;&#x56DE;true &#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x8D70;
+            // return false;   // &#x8FD4;&#x56DE; f &#x5C31;&#x51C9;&#x4E86;
+        }
+
+        // &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x66F4;&#x65B0;&#x7684;&#x94A9;&#x5B50;
+        componentWillUpdate() {
+            console.log(&quot;componentWillUpdate&quot;);
+        }
+
+        // &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x66F4;&#x65B0;&#x7684;&#x94A9;&#x5B50;
+        componentDidUpdate() {
+            console.log(&quot;componentDidUpdate&quot;);
+        }
+
+        render() {
+             console.log(&quot;render&quot;);
+            return (
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                    &#x6211;&#x662F;B&#x7EC4;&#x4EF6;,&#x63A5;&#x6536;&#x5230;&#x7684;&#x8F66;&#x662F;:{this.props.carName}
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            )
+        }
+    }
+
+    // A&#x662F;&#x7236;&#x7EC4;&#x4EF6; B&#x662F;&#x5B50;&#x7EC4;&#x4EF6;
+    //&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;
+    ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">A</span>/&gt;</span>, document.getElementById(&apos;test&apos;))
+</span></code></pre>
+<p><img src="041_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%88%B6%E7%BB%84%E4%BB%B6render%E6%B5%81%E7%A8%8B/1615377514569.png" alt="1615377514569"></p>
 
                                 
                                 </section>
@@ -1826,7 +1902,7 @@
 
             
                 
-                <a href="040_生命周期旧_forceU.html" class="navigation navigation-prev " aria-label="Previous page: 生命周期(旧)_forceU">
+                <a href="040_生命周期旧_forceUpdate.html" class="navigation navigation-prev " aria-label="Previous page: 生命周期旧_forceUpdate">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1842,7 +1918,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_父组件render流程","level":"1.42","depth":1,"next":{"title":"总结生命周期(旧)","level":"1.43","depth":1,"path":"042_总结生命周期旧.md","ref":"042_总结生命周期旧.md","articles":[]},"previous":{"title":"生命周期(旧)_forceU","level":"1.41","depth":1,"path":"040_生命周期旧_forceU.md","ref":"040_生命周期旧_forceU.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"041_生命周期旧_父组件render流程.md","mtime":"2021-03-08T11:46:04.575Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_父组件render流程","level":"1.42","depth":1,"next":{"title":"总结生命周期(旧)","level":"1.43","depth":1,"path":"042_总结生命周期旧.md","ref":"042_总结生命周期旧.md","articles":[]},"previous":{"title":"生命周期旧_forceUpdate","level":"1.41","depth":1,"path":"040_生命周期旧_forceUpdate.md","ref":"040_生命周期旧_forceUpdate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"041_生命周期旧_父组件render流程.md","mtime":"2021-03-11T05:40:58.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

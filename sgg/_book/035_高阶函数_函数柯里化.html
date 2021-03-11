@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1887,6 +1887,31 @@ ReactDOM.render(&lt;Login/&gt;, document.getElementById(&apos;test&apos;))
 <p>&#x4E0D;&#x8981;&#x7EA0;&#x7ED3;&#x6709;&#x6CA1;&#x6709;&#x5C0F;&#x62EC;&#x53F7;,&#x6838;&#x5FC3;&#x662F;&#x4F60;&#x8981;&#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4EA4;&#x7ED9;&#x56DE;&#x8C03;</p>
 <p>//#region &#x52A0;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x5C31;&#x80FD;&#x591F;&#x6298;&#x53E0;&#x4E86;</p>
 </blockquote>
+<h2 id="&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF1A;">&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF1A;</h2>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7B26;&#x5408;&#x4E0B;&#x9762;2&#x4E2A;&#x89C4;&#x8303;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#xFF0C;&#x90A3;&#x8BE5;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x3002;
+                1.&#x82E5;A&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x6536;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;A&#x5C31;&#x53EF;&#x4EE5;&#x79F0;&#x4E4B;&#x4E3A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x3002;
+                2.&#x82E5;A&#x51FD;&#x6570;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F9D;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;A&#x5C31;&#x53EF;&#x4EE5;&#x79F0;&#x4E4B;&#x4E3A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x3002;
+                &#x5E38;&#x89C1;&#x7684;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x6709;&#xFF1A;Promise&#x3001;setTimeout&#x3001;arr.map()&#x7B49;&#x7B49;</p>
+<h2 id="&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;&#xFF1A;">&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;&#xFF1A;</h2>
+<p>&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7EE7;&#x7EED;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x6B21;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x6700;&#x540E;&#x7EDF;&#x4E00;&#x5904;&#x7406;&#x7684;&#x51FD;&#x6570;&#x7F16;&#x7801;&#x5F62;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/* function sum(a,b,c){
+    return a+b+c
+} */</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a</span>)</span>{
+    <span class="hljs-keyword">return</span>(b)=&gt;{
+        <span class="hljs-keyword">return</span> (c)=&gt;{
+            <span class="hljs-keyword">return</span> a+b+c
+        }
+    }
+}
+<span class="hljs-keyword">const</span> result = sum(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)
+<span class="hljs-built_in">console</span>.log(result);
+</code></pre>
+<blockquote>
+<p>&#x4F60;&#x8FD9;&#x4E48;&#x5199;</p>
+<p>&#x79D1;&#x91CC;&#x5316; &#x5475;&#x5475;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -1930,7 +1955,7 @@ ReactDOM.render(&lt;Login/&gt;, document.getElementById(&apos;test&apos;))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"高阶函数_函数柯里化","level":"1.36","depth":1,"next":{"title":"不用柯里化的写法","level":"1.37","depth":1,"path":"036_不用柯里化的写法.md","ref":"036_不用柯里化的写法.md","articles":[]},"previous":{"title":"受控组件","level":"1.35","depth":1,"path":"034_受控组件.md","ref":"034_受控组件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"035_高阶函数_函数柯里化.md","mtime":"2021-03-10T10:19:42.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"高阶函数_函数柯里化","level":"1.36","depth":1,"next":{"title":"不用柯里化的写法","level":"1.37","depth":1,"path":"036_不用柯里化的写法.md","ref":"036_不用柯里化的写法.md","articles":[]},"previous":{"title":"受控组件","level":"1.35","depth":1,"path":"034_受控组件.md","ref":"034_受控组件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"035_高阶函数_函数柯里化.md","mtime":"2021-03-11T05:40:58.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

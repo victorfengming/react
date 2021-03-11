@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>getSna · GitBook</title>
+        <title>getSnapshotBeforeUpdate · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="047_总结生命周期新.html" />
+    <link rel="next" href="046_getSnapshotBeforeUpadate案例.html" />
     
     
-    <link rel="prev" href="045_getSna.html" />
+    <link rel="prev" href="044_getDerivedStateFromProps.html" />
     
 
     </head>
@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter active" data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1783,7 +1783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >getSna</a>
+        <a href="." >getSnapshotBeforeUpdate</a>
     </h1>
 </div>
 
@@ -1798,7 +1798,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="046getsnamd">046_getSna.md</h1>
+                                <h1 id="045-getsnapshotbeforeupdate">045 getSnapshotBeforeUpdate</h1>
+<p><code>getSnapshotBeforeUpdate</code>&#x6BD4;&#x4E4B;&#x524D;&#x5185;&#x4E2A;&#x6709;&#x70B9;&#x513F;&#x610F;&#x4E49;,&#x521A;&#x624D;&#x5185;&#x4E2A;&#x5185;&#x5199;&#x5B8C;&#x4E86;&#x8FD8;&#x8FDD;&#x80CC;&#x4E86;&#x4E00;&#x4E9B;&#x539F;&#x5219;,&#x6709;&#x642D;&#x5EFA;&#x4E86;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x624D;&#x641E;&#x51FA;&#x6765;&#x4E86;,&#x7136;&#x540E;&#x8FD8;&#x5F15;&#x53D1;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x95EE;&#x9898;,&#x5C31;&#x5C31;&#x5C31; ... &#x5C31;&#x2122;&#x79BB;&#x8C31;</p>
+<h2 id="&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x7684;&#x56FE;">&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x7684;&#x56FE;</h2>
+<p><img src="045_getSnapshotBeforeUpdate/1615382220240.png" alt="1615382220240"></p>
+<h2 id="&#x65E7;&#x7684;&#x56FE;">&#x65E7;&#x7684;&#x56FE;</h2>
+<p><img src="045_getSnapshotBeforeUpdate/1615382244415.png" alt="1615382244415"></p>
+<p>&#x6211;&#x5148;&#x628A;&#x4E0A;&#x4E00;&#x4E2A;&#x51FD;&#x6570; ,&#x8BA9;&#x4ED6;&#x8FD4;&#x56DE;null,&#x4F46;&#x662F;&#x6211;&#x8FD8;&#x4E0D;&#x7ED9;&#x4ED6;&#x5220;&#x9664;&#x6389;,&#x4E0D;&#x7136;&#x4F60;&#x603B;&#x662F;&#x611F;&#x89C9;&#x6CA1;&#x6709;&#x8D70;&#x5F0F;&#x7684;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps(props,state) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>,props,state);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+}
+</code></pre>
+<h2 id="&#x7FFB;&#x8BD1;">&#x7FFB;&#x8BD1;</h2>
+<p>Snapshot ==&gt; &#x5FEB;&#x7167;</p>
+<p>getSnapshotBeforeUpdate ===&gt; &#x5728;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#x83B7;&#x53D6;&#x5FEB;&#x7167;</p>
+<p>&#x4E0A;&#x4EE3;&#x7801;&#x6D4B;&#x8BD5;</p>
+<pre><code class="lang-javascript">getSnapshotBeforeUpdate() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getSnapshotBeforeUpdate&quot;</span>);
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x4ED6;&#x62A5;&#x9519;</p>
+<pre><code>react_devtools_backend.js:2450 Warning: Count.getSnapshotBeforeUpdate(): A snapshot value (or null) must be returned. You have returned undefined.
+    at Count (&lt;anonymous&gt;:17:9)
+</code></pre><p>&#x89E3;&#x51B3;&#x4E00;&#x4E0B;</p>
+<pre><code class="lang-javascript">getSnapshotBeforeUpdate() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getSnapshotBeforeUpdate&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x770B;<a href="https://react.docschina.org/docs/react-component.html#getsnapshotbeforeupdate" target="_blank">&#x5B98;&#x65B9;</a>&#x8FD9;&#x4E48;&#x8BF4;&#x7684;</p>
+<h3 id="getsnapshotbeforeupdate"><code>getSnapshotBeforeUpdate()</code></h3>
+<pre><code>getSnapshotBeforeUpdate(prevProps, prevState)
+</code></pre><p><code>getSnapshotBeforeUpdate()</code> &#x5728;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x6E32;&#x67D3;&#x8F93;&#x51FA;&#xFF08;&#x63D0;&#x4EA4;&#x5230; DOM &#x8282;&#x70B9;&#xFF09;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;&#x5B83;&#x4F7F;&#x5F97;&#x7EC4;&#x4EF6;&#x80FD;&#x5728;&#x53D1;&#x751F;&#x66F4;&#x6539;&#x4E4B;&#x524D;&#x4ECE; DOM &#x4E2D;&#x6355;&#x83B7;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;&#xFF09;&#x3002;&#x6B64;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x4EFB;&#x4F55;&#x8FD4;&#x56DE;&#x503C;&#x5C06;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9; <code>componentDidUpdate()</code>&#x3002;</p>
+<p>&#x6B64;&#x7528;&#x6CD5;&#x5E76;&#x4E0D;&#x5E38;&#x89C1;&#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728; UI &#x5904;&#x7406;&#x4E2D;&#xFF0C;&#x5982;&#x9700;&#x8981;&#x4EE5;&#x7279;&#x6B8A;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;&#x7684;&#x804A;&#x5929;&#x7EBF;&#x7A0B;&#x7B49;&#x3002;</p>
+<p>&#x5E94;&#x8FD4;&#x56DE; snapshot &#x7684;&#x503C;&#xFF08;&#x6216; <code>null</code>&#xFF09;&#x3002;</p>
 
                                 
                                 </section>
@@ -1826,12 +1861,12 @@
 
             
                 
-                <a href="045_getSna.html" class="navigation navigation-prev " aria-label="Previous page: getSna">
+                <a href="044_getDerivedStateFromProps.html" class="navigation navigation-prev " aria-label="Previous page: getDerivedStateFromProps">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="047_总结生命周期新.html" class="navigation navigation-next " aria-label="Next page: 总结生命周期(新)">
+                <a href="046_getSnapshotBeforeUpadate案例.html" class="navigation navigation-next " aria-label="Next page: getSnapshotBeforeUpadate案例">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1842,7 +1877,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"getSna","level":"1.47","depth":1,"next":{"title":"总结生命周期(新)","level":"1.48","depth":1,"path":"047_总结生命周期新.md","ref":"047_总结生命周期新.md","articles":[]},"previous":{"title":"getSna","level":"1.46","depth":1,"path":"045_getSna.md","ref":"045_getSna.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"046_getSna.md","mtime":"2021-03-08T11:46:04.578Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"getSnapshotBeforeUpdate","level":"1.46","depth":1,"next":{"title":"getSnapshotBeforeUpadate案例","level":"1.47","depth":1,"path":"046_getSnapshotBeforeUpadate案例.md","ref":"046_getSnapshotBeforeUpadate案例.md","articles":[]},"previous":{"title":"getDerivedStateFromProps","level":"1.45","depth":1,"path":"044_getDerivedStateFromProps.md","ref":"044_getDerivedStateFromProps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"045_getSnapshotBeforeUpdate.md","mtime":"2021-03-11T06:17:37.053Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

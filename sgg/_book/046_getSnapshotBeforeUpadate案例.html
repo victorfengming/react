@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>getDerivedStateFrom · GitBook</title>
+        <title>getSnapshotBeforeUpadate案例 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="045_getSna.html" />
+    <link rel="next" href="047_总结生命周期新.html" />
     
     
-    <link rel="prev" href="043_对比新旧生命周期.html" />
+    <link rel="prev" href="045_getSnapshotBeforeUpdate.html" />
     
 
     </head>
@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter active" data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1783,7 +1783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >getDerivedStateFrom</a>
+        <a href="." >getSnapshotBeforeUpadate案例</a>
     </h1>
 </div>
 
@@ -1798,7 +1798,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="044getderivedstatefrommd">044_getDerivedStateFrom.md</h1>
+                                <h1 id="046getsnapshotbeforeupadate&#x6848;&#x4F8B;">046_getSnapshotBeforeUpadate&#x6848;&#x4F8B;</h1>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewsList</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+    state = {newsArr: []}
+
+    <span class="hljs-comment">// &#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x94A9;&#x5B50;</span>
+    componentDidMount() {
+        setInterval(() =&gt; {
+            <span class="hljs-comment">//&#x83B7;&#x53D6;&#x539F;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">const</span> {newsArr} = <span class="hljs-keyword">this</span>.state
+            <span class="hljs-comment">//&#x6A21;&#x62DF;&#x4E00;&#x6761;&#x65B0;&#x95FB;</span>
+            <span class="hljs-keyword">const</span> news = <span class="hljs-string">&apos;&#x65B0;&#x95FB;&apos;</span> + (newsArr.length + <span class="hljs-number">1</span>)
+            <span class="hljs-comment">//&#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">this</span>.setState({newsArr: [news, ...newsArr]})
+        }, <span class="hljs-number">1000</span>);
+    }
+
+    getSnapshotBeforeUpdate() {
+        <span class="hljs-comment">// &#x8FD4;&#x56DE; &#x9AD8;&#x5EA6;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.refs.list.scrollHeight
+    }
+
+    componentDidUpdate(preProps, preState, height) {
+        <span class="hljs-keyword">this</span>.refs.list.scrollTop += <span class="hljs-keyword">this</span>.refs.list.scrollHeight - height
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;list&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;list&quot;</span>&gt;</span>
+                {
+                    this.state.newsArr.map((n, index) =&gt; {
+                        return <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;news&quot;</span>&gt;</span>{n}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    })
+                }
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">NewsList</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+</code></pre>
+<p><img src="img/image-20210311151239924.png" alt="image-20210311151239924"></p>
 
                                 
                                 </section>
@@ -1826,12 +1867,12 @@
 
             
                 
-                <a href="043_对比新旧生命周期.html" class="navigation navigation-prev " aria-label="Previous page: 对比新旧生命周期">
+                <a href="045_getSnapshotBeforeUpdate.html" class="navigation navigation-prev " aria-label="Previous page: getSnapshotBeforeUpdate">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="045_getSna.html" class="navigation navigation-next " aria-label="Next page: getSna">
+                <a href="047_总结生命周期新.html" class="navigation navigation-next " aria-label="Next page: 总结生命周期(新)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1842,7 +1883,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"getDerivedStateFrom","level":"1.45","depth":1,"next":{"title":"getSna","level":"1.46","depth":1,"path":"045_getSna.md","ref":"045_getSna.md","articles":[]},"previous":{"title":"对比新旧生命周期","level":"1.44","depth":1,"path":"043_对比新旧生命周期.md","ref":"043_对比新旧生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"044_getDerivedStateFrom.md","mtime":"2021-03-08T11:46:04.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"getSnapshotBeforeUpadate案例","level":"1.47","depth":1,"next":{"title":"总结生命周期(新)","level":"1.48","depth":1,"path":"047_总结生命周期新.md","ref":"047_总结生命周期新.md","articles":[]},"previous":{"title":"getSnapshotBeforeUpdate","level":"1.46","depth":1,"path":"045_getSnapshotBeforeUpdate.md","ref":"045_getSnapshotBeforeUpdate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"046_getSnapshotBeforeUpadate案例.md","mtime":"2021-03-11T07:12:46.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

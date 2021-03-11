@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1798,8 +1798,100 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;md">038<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;.md</h1>
+                                <h1 id="038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;">038<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;</h1>
+<p>&#x7406;&#x89E3;:</p>
+<ol>
+<li>&#x7EC4;&#x4EF6;&#x4ECE;&#x521B;&#x5EFA;&#x5230;&#x6B7B;&#x4EA1;&#x5979;&#x4F1A;&#x7ECF;&#x5386;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x9636;&#x6BB5;</li>
+<li>React&#x7EC4;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x94A9;&#x5B50;&#x51FD;&#x6570;(&#x58F0;&#x660E;&#x5468;&#x671F;&#x51FD;&#x6570;),&#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x523B;&#x8C03;&#x7528;</li>
+<li>&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x65F6;,&#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x58F0;&#x660E;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;,&#x505A;&#x7279;&#x5B9A;&#x7684;&#x5DE5;&#x4F5C;.</li>
+</ol>
+<p><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615374349820.png" alt="1615374349820"></p>
+<blockquote>
+<p>&#x58F0;&#x660E;&#x5468;&#x671F;&#x51FD;&#x6570;(&#x94A9;&#x5B50;) &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8C03;&#x7528;,&#x548C;&#x4F60;&#x5199;&#x5728;&#x54EA;&#x513F;&#x4E48;&#x6709;&#x5173;&#x7CFB;</p>
+</blockquote>
+<p>&#x6848;&#x4F8B;</p>
+<pre><code class="lang-javascript">    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Count</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+        state = {count: <span class="hljs-number">0</span>}
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
+
+        <span class="hljs-comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
+        add = () =&gt; {
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
+            <span class="hljs-comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">this</span>.setState({count: count + <span class="hljs-number">1</span>})
+        };
+
+        render() {
+            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
+            <span class="hljs-keyword">return</span> (
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;:{count}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.add}</span>&gt;</span>&#x70B9;&#x6211;+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+            )
+        }
+    }
+
+    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+</code></pre>
+<p><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615375049976.png" alt="1615375049976"></p>
+<p>&#x6D4B;&#x8BD5;&#x987A;&#x5E8F;</p>
+<pre><code class="lang-javascript">    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Count</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+        <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7684;&#x5F53;&#x7136;&#x662F;&#x6784;&#x9020;&#x5668;</span>
+        <span class="hljs-keyword">constructor</span>(props) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;count-constructor&quot;</span>);
+            <span class="hljs-keyword">super</span>(props);
+            <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">this</span>.state = {count: <span class="hljs-number">0</span>}
+                    <span class="hljs-comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
+
+        }
+
+        <span class="hljs-comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
+        add = () =&gt; {
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
+            <span class="hljs-comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+            <span class="hljs-keyword">this</span>.setState({count: count + <span class="hljs-number">1</span>})
+        };
+
+        <span class="hljs-comment">// &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x94A9;&#x5B50;</span>
+        componentWillMount() {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;componentWillMount&quot;</span>);
+        }
+
+        <span class="hljs-comment">// &#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x94A9;&#x5B50;</span>
+        componentDidMount() {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;componentDitMount&quot;</span>)
+        }
+        render() {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;render&quot;</span>)
+            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
+            <span class="hljs-keyword">return</span> (
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;:{count}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.add}</span>&gt;</span>&#x70B9;&#x6211;+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+            )
+        }
+    }
+
+    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+</code></pre>
+<pre><code>
+Inline Babel script:8 count-constructor
+Inline Babel script:27 componentWillMount
+Inline Babel script:35 render
+Inline Babel script:32 componentDitMount
+</code></pre>
                                 
                                 </section>
                             
@@ -1842,7 +1934,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_组件挂载流程","level":"1.39","depth":1,"next":{"title":"生命周期(旧)_setState流程","level":"1.40","depth":1,"path":"039_生命周期旧_setState流程.md","ref":"039_生命周期旧_setState流程.md","articles":[]},"previous":{"title":"引出生命周期","level":"1.38","depth":1,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"038_生命周期旧_组件挂载流程.md","mtime":"2021-03-08T11:46:04.574Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_组件挂载流程","level":"1.39","depth":1,"next":{"title":"生命周期(旧)_setState流程","level":"1.40","depth":1,"path":"039_生命周期旧_setState流程.md","ref":"039_生命周期旧_setState流程.md","articles":[]},"previous":{"title":"引出生命周期","level":"1.38","depth":1,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"038_生命周期旧_组件挂载流程.md","mtime":"2021-03-11T05:40:58.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

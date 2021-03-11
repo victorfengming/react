@@ -609,12 +609,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceU.html">
+        <li class="chapter " data-level="1.41" data-path="040_生命周期旧_forceUpdate.html">
             
-                <a href="040_生命周期旧_forceU.html">
+                <a href="040_生命周期旧_forceUpdate.html">
             
                     
-                    生命周期(旧)_forceU
+                    生命周期旧_forceUpdate
             
                 </a>
             
@@ -661,12 +661,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFrom.html">
+        <li class="chapter " data-level="1.45" data-path="044_getDerivedStateFromProps.html">
             
-                <a href="044_getDerivedStateFrom.html">
+                <a href="044_getDerivedStateFromProps.html">
             
                     
-                    getDerivedStateFrom
+                    getDerivedStateFromProps
             
                 </a>
             
@@ -674,12 +674,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.46" data-path="045_getSna.html">
+        <li class="chapter " data-level="1.46" data-path="045_getSnapshotBeforeUpdate.html">
             
-                <a href="045_getSna.html">
+                <a href="045_getSnapshotBeforeUpdate.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpdate
             
                 </a>
             
@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.47" data-path="046_getSna.html">
+        <li class="chapter " data-level="1.47" data-path="046_getSnapshotBeforeUpadate案例.html">
             
-                <a href="046_getSna.html">
+                <a href="046_getSnapshotBeforeUpadate案例.html">
             
                     
-                    getSna
+                    getSnapshotBeforeUpadate案例
             
                 </a>
             
@@ -1798,7 +1798,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="036&#x4E0D;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x5199;&#x6CD5;md">036_&#x4E0D;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x5199;&#x6CD5;.md</h1>
+                                <h1 id="036&#x4E0D;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x5199;&#x6CD5;">036_&#x4E0D;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x5199;&#x6CD5;</h1>
+<p>&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x5199;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x51FD;&#x6570;,&#x5C31;&#x4E0D;&#x81F3;&#x4E8E;&#x8981;&#x5957;&#x4E00;&#x5C42;,&#x6765;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x4E86;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+    state = {
+        username: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">//&#x7528;&#x6237;&#x540D;</span>
+        password: <span class="hljs-string">&apos;&apos;</span> <span class="hljs-comment">//&#x5BC6;&#x7801;</span>
+    }
+
+<span class="hljs-comment">//&#x4FDD;&#x5B58;&#x8868;&#x5355;&#x6570;&#x636E;&#x5230;&#x72B6;&#x6001;&#x4E2D;</span>
+saveFormData = (dataType, event) =&gt; {
+    <span class="hljs-keyword">this</span>.setState({[dataType]: event.target.value})
+}
+
+<span class="hljs-comment">//&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x7684;&#x56DE;&#x8C03;</span>
+handleSubmit = (event) =&gt; {
+    event.preventDefault() <span class="hljs-comment">//&#x963B;&#x6B62;&#x8868;&#x5355;&#x63D0;&#x4EA4;</span>
+    <span class="hljs-keyword">const</span> {username, password} = <span class="hljs-keyword">this</span>.state
+    alert(<span class="hljs-string">`&#x4F60;&#x8F93;&#x5165;&#x7684;&#x7528;&#x6237;&#x540D;&#x662F;&#xFF1A;<span class="hljs-subst">${username}</span>,&#x4F60;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x662F;&#xFF1A;<span class="hljs-subst">${password}</span>`</span>)
+}
+
+render() {
+    <span class="hljs-keyword">return</span> (
+        &lt;form onSubmit={this.handleSubmit}&gt;
+        &#x7528;&#x6237;&#x540D;&#xFF1A;&lt;input onChange={event =&gt; this.saveFormData(&apos;username&apos;, event)} type=&quot;text&quot; name=&quot;username&quot;/&gt;
+            &#x5BC6;&#x7801;&#xFF1A;&lt;input onChange={event =&gt; this.saveFormData(&apos;password&apos;, event)} type=&quot;password&quot; name=&quot;password&quot;/&gt;
+                &lt;button&gt;&#x767B;&#x5F55;&lt;/button&gt;
+&lt;/form&gt;
+)
+}
+}
+
+//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;
+ReactDOM.render(&lt;Login/&gt;, document.getElementById(&apos;test&apos;))
+</code></pre>
 
                                 
                                 </section>
@@ -1842,7 +1877,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"不用柯里化的写法","level":"1.37","depth":1,"next":{"title":"引出生命周期","level":"1.38","depth":1,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"previous":{"title":"高阶函数_函数柯里化","level":"1.36","depth":1,"path":"035_高阶函数_函数柯里化.md","ref":"035_高阶函数_函数柯里化.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"036_不用柯里化的写法.md","mtime":"2021-03-08T11:46:04.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-10T10:21:29.318Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"不用柯里化的写法","level":"1.37","depth":1,"next":{"title":"引出生命周期","level":"1.38","depth":1,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"previous":{"title":"高阶函数_函数柯里化","level":"1.36","depth":1,"path":"035_高阶函数_函数柯里化.md","ref":"035_高阶函数_函数柯里化.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"036_不用柯里化的写法.md","mtime":"2021-03-11T05:40:58.929Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-11T08:20:26.680Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
