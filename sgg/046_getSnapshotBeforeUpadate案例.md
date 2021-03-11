@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>4_getSnapShotBeforeUpdate的使用场景</title>
-    <style>
-        .list {
-            width: 200px;
-            height: 150px;
-            background-color: skyblue;
-            overflow: auto;
-        }
+# 046_getSnapshotBeforeUpadate案例
 
-        .news {
-            height: 30px;
-        }
-    </style>
-</head>
-<body>
-<!-- 准备好一个“容器” -->
-<div id="test"></div>
-
-<!-- 引入react核心库 -->
-<script type="text/javascript" src="../js/17.0.1/react.development.js"></script>
-<!-- 引入react-dom，用于支持react操作DOM -->
-<script type="text/javascript" src="../js/17.0.1/react-dom.development.js"></script>
-<!-- 引入babel，用于将jsx转为js -->
-<script type="text/javascript" src="../js/17.0.1/babel.min.js"></script>
-
-<script type="text/babel">
+```javascript
 class NewsList extends React.Component {
 
     state = {newsArr: []}
@@ -67,6 +40,7 @@ class NewsList extends React.Component {
 }
 
 ReactDOM.render(<NewsList/>, document.getElementById('test'))
-</script>
-</body>
-</html>
+```
+
+![image-20210311151239924](img/image-20210311151239924.png)
+

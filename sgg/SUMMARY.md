@@ -47,7 +47,7 @@
 - [对比新旧生命周期](043_对比新旧生命周期.md)
 - [getDerivedStateFromProps](044_getDerivedStateFromProps.md)
 - [getSnapshotBeforeUpdate](045_getSnapshotBeforeUpdate.md)
-- [getSna](046_getSna.md)
+- [getSnapshotBeforeUpadate案例](046_getSnapshotBeforeUpadate案例.md)
 - [总结生命周期(新)](047_总结生命周期新.md)
 - [DOM的diffing算法](048_DOM的diffing算法.md)
 - [初始化react脚手架](049_初始化react脚手架.md)
