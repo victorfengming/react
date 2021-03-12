@@ -1,5 +1,9 @@
 # 048_DOM的diffing算法
 
+> React的优势就是他不是直接操作的这是的DOM,而是在更新的时候比较新旧虚拟DOM,然后只是把修改部分的部分渲染到页面上去
+
+
+
 ```javascript
 class Time extends React.Component {
 	state = {date: new Date()}
