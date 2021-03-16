@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="application/javascript">
+    class Person{
+        constructor(name, age) {
+            //
+            this.name = name;
+            this.age = age;
+        }
+
+        speak() {
+            console.log(this);
+        }
+    }
+
+    const p1 = new Person("张三",18);
+    p1.speak()
+
+    ///Person {name: "张三", aeg: 18}
+    // aeg: 18
+// name: "张三"
+// __proto__: Object
+    const x = p1.study  //这行没有调用
+    // study 放在了哪里? - 类的原型对象上,供实例使用
+    // x() // 这个直接调用
+
+    function demo() {
+        'use strict'
+        console.log("this")
+        console.log(this)
+        console.log("this");
+
+        /*
+        * this
+        3_类中的方法this指向.html?_ijt=8q4o0h7jiot35v2n9l7dmkc877:38 undefined
+        3_类中的方法this指向.html?_ijt=8q4o0h7jiot35v2n9l7dmkc877:39
+        * */
+    }
+
+    // 测试调用
+    demo()
+</script>
+
+</body>
+</html>

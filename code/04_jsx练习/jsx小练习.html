@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsx小练习.html</title>
+
+</head>
+<body>
+<!--准备好一个"容器""-->
+<div id="test"></div>
+<!--引入 react 核心库-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!--引入 react-dom ,用于支持react 操作Dom-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--引入babel,用于将jsx转为js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!--babel,表示是jsx-->
+<script type="text/babel">
+    /*
+    * 一定主意区分: [js 语句(代码)]与[js表达式]
+    *   1. 表达式: 一个表达式会产生一个值,可以放在任何一个需要值的地方
+    *       下面这些都是表达式:
+    *           1. a
+    *           2. a+b
+    *           3. demo(1)
+    *           4. arr.map()
+    *           5. function test(){}
+    *   2. 语句(代码):
+    *       下面这些都是语句(代码):
+    *           1. if(){}
+    *           2. for(){}
+    *           3. swtich(){case:xxx}
+    * */
+    // 0. 模拟一些数据
+    const data = ['Angular','React','Vue']
+    // 吧这个纯数据加工成带有标签的数据
+    const obj = {"name1":'Angular',"name2":'React',"name3":'Vue',}
+    const data2 = [<li>Angular</li>,<li>React</li>,<li>Vue</li>]
+    // 1. 创建虚拟Dom// 此处一定不要写引号,因为不是字符串
+    const VDOM = (
+        <div>
+            <h1>前端js框架列表</h1>
+            <ul>
+                {
+                    data.map((item,index)=>{
+                        return <li>{index}>{item}</li>
+                    })
+                }
+            </ul>
+        </div>
+    );
+    // 2. 渲染虚拟DOM到页面
+    ReactDOM.render(VDOM, document.getElementById('test')); // 这个地方你不服
+/*
+*  你给react 数组 他能够帮您遍历
+*  你给react 对象 他就蒙B了
+*
+* */
+</script>
+
+
+</body>
+</html>
