@@ -62,7 +62,7 @@
 - [TodoList案例_添加todo](058_TodoList案例_添加todo.md)
 - [TodoList案例_鼠标移入效果](059_TodoList案例_鼠标移入效果.md)
 - [TodoList案例_添加一个todo](060_TodoList案例_添加一个todo.md)
-- [TodoList案例_对](061_TodoList案例_对.md)
+- [TodoList案例_对props进行限制](061_TodoList案例_对props进行限制.md)
 - [TodoList案例_删除一个todo](062_TodoList案例_删除一个todo.md)
 - [TodoList案例_实现底部功能](063_TodoList案例_实现底部功能.md)
 - [TodoList案例_总结TodoList案例](064_TodoList案例_总结TodoList案例.md)
