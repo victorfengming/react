@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -2076,60 +2080,57 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;">024_&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;</h1>
-<p><a href="img/image-20210310094533007.png" data-lightbox="389f0905-d37a-49cf-bf9e-b6de50055add" data-title="image-20210310094533007"><img src="img/image-20210310094533007.png" alt="image-20210310094533007"></a></p>
-<p><a href="img/image-20210310094711213.png" data-lightbox="16226ac5-b7e4-4c99-839f-573bcf368657" data-title="image-20210310094711213"><img src="img/image-20210310094711213.png" alt="image-20210310094711213"></a></p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// TODO &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-    state = {name: <span class="hljs-string">&apos;tom&apos;</span>, age: <span class="hljs-string">&quot;18&quot;</span>, sex: <span class="hljs-string">&quot;&#x5973;&quot;</span>}
+<p><a href="img/image-20210310094533007.png" data-lightbox="e4605acf-d360-4f2e-9cd4-c72936ff7bd3" data-title="image-20210310094533007"><img src="img/image-20210310094533007.png" alt="image-20210310094533007"></a></p>
+<p><a href="img/image-20210310094711213.png" data-lightbox="75a41906-dc93-42de-9cdf-82962fe12416" data-title="image-20210310094711213"><img src="img/image-20210310094711213.png" alt="image-20210310094711213"></a></p>
+<p>```javascript
+// TODO &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;
+class Person extends React.Component {
+    state = {name: &apos;tom&apos;, age: &quot;18&quot;, sex: &quot;&#x5973;&quot;}</p>
+<pre><code>constructor(props) {
+    // &#x6784;&#x9020;&#x5668; &#x662F;&#x5426;&#x63A5;&#x53D7;props,&#x77F3;&#x4F5B;&#x8BED;&#x4F20;&#x9012;&#x7ED9;super,&#x53D6;&#x51B3;&#x4E8E;:
+    // 1. &#x662F;&#x5426;&#x5E0C;&#x671B;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x901A;&#x8FC7;this&#x8BBF;&#x95EE;props
+    // &#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53CA;&#x5176;&#x5C11;&#x89C1;
+    super(props);
+    // ??? &#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x6211;&#x4F20;&#x9012;&#x7ED9;super()props&#x5C5E;&#x6027;
+    // &#x6784;&#x9020;&#x5668;&#x79D1;&#x534F;&#x53EF;&#x4E0D;&#x5199;
+    console.log(&apos;constructor&apos;, this.props)
+    // &#x5982;&#x679C;&#x6211;&#x9700;&#x8981;&#x7528;this.props &#x4E5F;&#x53EF;&#x4EE5; &#x76F4;&#x63A5;props
+    // props &#x6709;&#x88AB;&#x4F20;&#x8FDB;&#x6765;&#x7684;,
 
-    <span class="hljs-keyword">constructor</span>(props) {
-        <span class="hljs-comment">// &#x6784;&#x9020;&#x5668; &#x662F;&#x5426;&#x63A5;&#x53D7;props,&#x77F3;&#x4F5B;&#x8BED;&#x4F20;&#x9012;&#x7ED9;super,&#x53D6;&#x51B3;&#x4E8E;:</span>
-        <span class="hljs-comment">// 1. &#x662F;&#x5426;&#x5E0C;&#x671B;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x901A;&#x8FC7;this&#x8BBF;&#x95EE;props</span>
-        <span class="hljs-comment">// &#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53CA;&#x5176;&#x5C11;&#x89C1;</span>
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-comment">// ??? &#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x6211;&#x4F20;&#x9012;&#x7ED9;super()props&#x5C5E;&#x6027;</span>
-        <span class="hljs-comment">// &#x6784;&#x9020;&#x5668;&#x79D1;&#x534F;&#x53EF;&#x4E0D;&#x5199;</span>
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;constructor&apos;</span>, <span class="hljs-keyword">this</span>.props)
-        <span class="hljs-comment">// &#x5982;&#x679C;&#x6211;&#x9700;&#x8981;&#x7528;this.props &#x4E5F;&#x53EF;&#x4EE5; &#x76F4;&#x63A5;props</span>
-        <span class="hljs-comment">// props &#x6709;&#x88AB;&#x4F20;&#x8FDB;&#x6765;&#x7684;,</span>
-
-
-    }
-
-    <span class="hljs-comment">// TODO &#x5BF9;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x7C7B;&#x578B;,&#x5FC5;&#x8981;&#x6027;&#x7684;&#x9650;&#x5236;</span>
-    <span class="hljs-keyword">static</span> prototypes = {
-        name: PropTypes.string.isRequired,    <span class="hljs-comment">// &#x5B57;&#x7B26;&#x4E32; &#x5FC5;&#x987B;&#x4F20;</span>
-        sex: PropTypes.string,<span class="hljs-comment">// &#x9650;&#x5236;rex&#x6CA1;&#x8BF4;&#x5FC5;&#x4F20;</span>
-        age: PropTypes.number,<span class="hljs-comment">// &#x9650;&#x5236; age&#x4E3A;&#x6570;&#x503C;</span>
-        speak: PropTypes.func,<span class="hljs-comment">// &#x9650;&#x5236;speak&#x4E3A;&#x51FD;&#x6570;</span>
-    }
-    <span class="hljs-comment">// TODO &#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x503C;</span>
-    <span class="hljs-keyword">static</span> defaultProps = {
-        sex: <span class="hljs-string">&apos;&#x7537;&apos;</span>, <span class="hljs-comment">// sex&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x96BE;</span>
-        age: <span class="hljs-number">18</span>  <span class="hljs-comment">// &#x5E74;&#x9F84; &#x9ED8;&#x8BA4;&#x4E3A;18</span>
-    }
-
-    render() {
-        <span class="hljs-keyword">const</span> {name, age, sex} = <span class="hljs-keyword">this</span>.props
-        <span class="hljs-comment">// props &#x662F;&#x53EA;&#x8BFB;&#x7684;</span>
-        <span class="hljs-keyword">this</span>.props.name = <span class="hljs-string">&apos;jack&apos;</span>    <span class="hljs-comment">// &#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4F1A;&#x62A5;&#x9519;,&#x56E0;&#x4E3A;props&#x662F;&#x652F;&#x961F;&#x7684;</span>
-        <span class="hljs-comment">// &#x4ECE;&#x7EC4;&#x5EFA;&#x5916;&#x90E8; &#x6765;&#x7ED9;&#x4ED6;&#x4FE1;&#x606F;,&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x7528;state &#x6765;&#x7ED9;&#x4ED6;&#x6570;&#x636E;&#x4FE1;&#x606F;</span>
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x59D3;&#x540D;: {name}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x59D3;&#x522B;: {sex}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x5E74;&#x9F84;: {age + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
-        )
-        <span class="hljs-comment">// &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt; &#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x4FEE;&#x6539;,&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;,&#x53EA;&#x6709;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;</span>
-    }
 
 }
 
+// TODO &#x5BF9;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x7C7B;&#x578B;,&#x5FC5;&#x8981;&#x6027;&#x7684;&#x9650;&#x5236;
+static prototypes = {
+    name: PropTypes.string.isRequired,    // &#x5B57;&#x7B26;&#x4E32; &#x5FC5;&#x987B;&#x4F20;
+    sex: PropTypes.string,// &#x9650;&#x5236;rex&#x6CA1;&#x8BF4;&#x5FC5;&#x4F20;
+    age: PropTypes.number,// &#x9650;&#x5236; age&#x4E3A;&#x6570;&#x503C;
+    speak: PropTypes.func,// &#x9650;&#x5236;speak&#x4E3A;&#x51FD;&#x6570;
+}
+// TODO &#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x503C;
+static defaultProps = {
+    sex: &apos;&#x7537;&apos;, // sex&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x96BE;
+    age: 18  // &#x5E74;&#x9F84; &#x9ED8;&#x8BA4;&#x4E3A;18
+}
 
-<span class="hljs-comment">// TODO &#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jerry&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">{19}</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;&#x7537;&quot;</span>/&gt;</span>, document.getElementById(&apos;test1&apos;))
-</span></code></pre>
+render() {
+    const {name, age, sex} = this.props
+    // props &#x662F;&#x53EA;&#x8BFB;&#x7684;
+    this.props.name = &apos;jack&apos;    // &#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4F1A;&#x62A5;&#x9519;,&#x56E0;&#x4E3A;props&#x662F;&#x652F;&#x961F;&#x7684;
+    // &#x4ECE;&#x7EC4;&#x5EFA;&#x5916;&#x90E8; &#x6765;&#x7ED9;&#x4ED6;&#x4FE1;&#x606F;,&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x7528;state &#x6765;&#x7ED9;&#x4ED6;&#x6570;&#x636E;&#x4FE1;&#x606F;
+    return (
+        &lt;ul&gt;
+            &lt;li&gt;&#x59D3;&#x540D;: {name}&lt;/li&gt;
+            &lt;li&gt;&#x59D3;&#x522B;: {sex}&lt;/li&gt;
+            &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt;
+        &lt;/ul&gt;
+    )
+    // &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt; &#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x4FEE;&#x6539;,&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;,&#x53EA;&#x6709;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;
+}
+</code></pre><p>}</p>
+<p>// TODO &#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;
+ReactDOM.render(<person name="jerry" age="{19}" sex="&#x7537;">, document.getElementById(&apos;test1&apos;))
+```</person></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
 
                                 
                                 </section>
@@ -2173,7 +2174,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-n
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"类式组件中的构造器与","level":"1.13.5","depth":2,"next":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"previous":{"title":"props的简写方式","level":"1.13.4","depth":2,"path":"023_props的简写方式.md","ref":"023_props的简写方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"024_类式组件中的构造器与.md","mtime":"2021-03-10T10:18:46.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T02:05:28.732Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"类式组件中的构造器与","level":"1.13.5","depth":2,"next":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"previous":{"title":"props的简写方式","level":"1.13.4","depth":2,"path":"023_props的简写方式.md","ref":"023_props的简写方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"024_类式组件中的构造器与.md","mtime":"2021-03-28T11:41:55.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2181,6 +2182,10 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-n
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>

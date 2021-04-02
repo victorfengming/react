@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -2078,7 +2082,7 @@
                                 <h1 id="028&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;ref">028_&#x56DE;&#x8C03;&#x5F62;&#x5F0F;&#x7684;ref</h1>
 <p>&#x524D;&#x9762;&#x8BB2;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;ref&#x5DF2;&#x7ECF;&#x4E0D;&#x88AB;react&#x5B98;&#x65B9;&#x6240;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x4E86;</p>
 <p>&#x800C;&#x4E14;&#x5B98;&#x65B9;&#x8BF4;,&#x5728;&#x66F4;&#x65B0;&#x6709;&#x53EF;&#x80FD;&#x7ED9;&#x4ED6;&#x5E9F;&#x5F03;&#x6389;</p>
-<p><a href="img/image-20210310135505391.png" data-lightbox="bd97b311-4eb2-43de-882a-6b71b1cb6392" data-title="image-20210310135505391"><img src="img/image-20210310135505391.png" alt="image-20210310135505391"></a></p>
+<p><a href="img/image-20210310135505391.png" data-lightbox="b2da8d37-f249-4c76-b037-71d217c1b44e" data-title="image-20210310135505391"><img src="img/image-20210310135505391.png" alt="image-20210310135505391"></a></p>
 <p>&#x5B98;&#x65B9;&#x7684;&#x8FD9;&#x4E2A;&#x6559;&#x7A0B;&#x7684;&#x987A;&#x5E8F;,&#x5BF9;&#x4E8E;&#x521D;&#x5B66;&#x8005;&#x4E0D;&#x662F;&#x5F88;&#x53CB;&#x597D;</p>
 <p>&#x6709;&#x5F88;&#x591A;&#x6982;&#x5FF5;&#x9700;&#x8981;&#x4E92;&#x76F8;&#x7406;&#x89E3;</p>
 <p>&#x5B98;&#x65B9;&#x6587;&#x6863;:<a href="https://react.docschina.org/docs/refs-and-the-dom.html" target="_blank">refs</a></p>
@@ -2097,61 +2101,61 @@
 <li>&#x6709;&#x4EBA;&#x8C03;&#x7528;&#x4E86;</li>
 </ol>
 <h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>1_&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;ref<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x51C6;&#x5907;&#x597D;&#x4E00;&#x4E2A;&#x201C;&#x5BB9;&#x5668;&#x201D; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;react&#x6838;&#x5FC3;&#x5E93; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;react-dom&#xFF0C;&#x7528;&#x4E8E;&#x652F;&#x6301;react&#x64CD;&#x4F5C;DOM --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;babel&#xFF0C;&#x7528;&#x4E8E;&#x5C06;jsx&#x8F6C;&#x4E3A;js --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<p>```html
+&lt;!DOCTYPE html&gt;</p>
+<p></p>
+<p>
+    <meta charset="UTF-8">
+    <title>1_&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;ref</title>
+</p>
+<p>
+<!-- 准备好一个“容器” --></p>
+<p></p><div id="test"></div>
+<!-- 引入react核心库 --><p></p>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!-- 引入react-dom，用于支持react操作DOM -->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!-- 引入babel，用于将jsx转为js -->
+<script type="text/javascript" src="../js/babel.min.js"></script>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><span class="actionscript">
-    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-        <span class="hljs-comment">//&#x5C55;&#x793A;&#x5DE6;&#x4FA7;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6570;&#x636E;</span>
-        showData = () =&gt; {
-            <span class="hljs-keyword">const</span> {input1} = <span class="hljs-keyword">this</span>
+<script type="text/babel">
+    //创建组件
+    class Demo extends React.Component {
+        //展示左侧输入框的数据
+        showData = () => {
+            const {input1} = this
             alert(input1.value)
         }
-        <span class="hljs-comment">//&#x5C55;&#x793A;&#x53F3;&#x4FA7;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6570;&#x636E;</span>
-        showData2 = () =&gt; {
-            <span class="hljs-keyword">const</span> {input2} = <span class="hljs-keyword">this</span>
+        //展示右侧输入框的数据
+        showData2 = () => {
+            const {input2} = this
             alert(input2.value)
         }
 
         render() {
-            <span class="hljs-keyword">return</span> (
-                &lt;div&gt;
-                    &lt;input ref={c =&gt; <span class="hljs-keyword">this</span>.input1 = c} type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;</span>/&gt;&amp;nbsp;
-                    &lt;button onClick={<span class="hljs-keyword">this</span>.showData}&gt;&#x70B9;&#x6211;&#x63D0;&#x793A;&#x5DE6;&#x4FA7;&#x7684;&#x6570;&#x636E;&lt;/button&gt;
-                    &amp;nbsp;
-                    &lt;input onBlur={<span class="hljs-keyword">this</span>.showData2} ref={c =&gt; <span class="hljs-keyword">this</span>.input2 = c} type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x63D0;&#x793A;&#x6570;&#x636E;&quot;</span>/&gt;&amp;nbsp;
-                &lt;/div&gt;
+            return (
+                <div>
+                    <input ref={c => this.input1 = c} type="text" placeholder="点击按钮提示数据"/>&nbsp;
+                    <button onClick={this.showData}>点我提示左侧的数据</button>
+                    &nbsp;
+                    <input onBlur={this.showData2} ref={c => this.input2 = c} type="text" placeholder="失去焦点提示数据"/>&nbsp;
+                </div>
             )
         }
 
-        <span class="hljs-comment">//ref={c =&gt; this.input1 = c} &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
-        <span class="hljs-comment">// &#x4F60;&#x53EA;&#x9700;&#x8981;&#x5427;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5199;&#x5728;&#x8FD9;&#x91CC;</span>
-        <span class="hljs-comment">// react &#x4F1A;&#x5E2E;&#x4F60;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;</span>
-        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x5199;ref,&#x4E0D;&#x80FD;&#x5199;&#x522B;&#x7684;,&#x624D;&#x80FD;&#x88AB;&#x626B;&#x5230;</span>
-        <span class="hljs-comment">// &#x8FD8;&#x5427;ref&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;,&#x4F20;&#x9012;&#x8FDB;&#x53BB;,&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B9E;&#x53C2;</span>
+        //ref={c => this.input1 = c} 这个函数是一个回调函数
+        // 你只需要吧这个函数写在这里
+        // react 会帮你调用这个函数的
+        // 这里只能写ref,不能写别的,才能被扫到
+        // 还吧ref当前这个节点,传递进去,作为一个实参
     }
 
-    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
-    ReactDOM.render(&lt;Demo a=<span class="hljs-string">&quot;1&quot;</span> b=<span class="hljs-string">&quot;2&quot;</span>/&gt;, document.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
+    //渲染组件到页面
+    ReactDOM.render(<Demo a="1" b="2"/>, document.getElementById('test'))
+</script>
 
+
+```<hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script>
                                 
                                 </section>
                             
@@ -2194,7 +2198,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"回调形式的ref","level":"1.14.2","depth":2,"next":{"title":"回调ref中调用次数的问题","level":"1.14.3","depth":2,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"previous":{"title":"字符串形式的ref","level":"1.14.1","depth":2,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"028_回调形式的ref.md","mtime":"2021-03-10T10:18:46.707Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T02:05:28.732Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"回调形式的ref","level":"1.14.2","depth":2,"next":{"title":"回调ref中调用次数的问题","level":"1.14.3","depth":2,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},"previous":{"title":"字符串形式的ref","level":"1.14.1","depth":2,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"028_回调形式的ref.md","mtime":"2021-03-28T11:41:55.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2202,6 +2206,10 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>

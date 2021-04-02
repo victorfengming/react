@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -2186,73 +2190,72 @@ react 中 他重新封装了这些事件, 他
 </blockquote>
 <p>&#x8FD9;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x8FD8;&#x662F;&#x539F;&#x578B;&#x4E0A;&#x7684;&#x51FD;&#x6570;</p>
 <p>&#x6240;&#x4EE5;&#x8FD8;&#x8981;&#x6539;&#x4E00;&#x4E0B;</p>
-<p><a href="img/image-20210309163313421.png" data-lightbox="bfbc32dc-fb57-409f-b7ec-c06e9bc00574" data-title="image-20210309163313421"><img src="img/image-20210309163313421.png" alt="image-20210309163313421"></a></p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span>
-          <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>06_&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E09;&#x5927;&#x5C5E;&#x6027;1_state.html.html.html<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-comment">&lt;!--&#x5F15;&#x5165; react &#x6838;&#x5FC3;&#x5E93;--&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-comment">&lt;!--&#x5F15;&#x5165; react-dom ,&#x7528;&#x4E8E;&#x652F;&#x6301;react &#x64CD;&#x4F5C;Dom--&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-comment">&lt;!--&#x5F15;&#x5165;babel,&#x7528;&#x4E8E;&#x5C06;jsx&#x8F6C;&#x4E3A;js--&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&#x51C6;&#x5907;&#x597D;&#x4E00;&#x4E2A;&quot;&#x5BB9;&#x5668;&quot;&quot;--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-comment">&lt;!--
-react &#x4E2D; &#x4ED6;&#x91CD;&#x65B0;&#x5C01;&#x88C5;&#x4E86;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;, &#x4ED6;
---&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-comment">&lt;!--babel,&#x8868;&#x793A;&#x662F;jsx--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><span class="javascript">
-    <span class="hljs-comment">// 1. &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Weather</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-        <span class="hljs-keyword">constructor</span>(props) {
-            <span class="hljs-keyword">super</span>(props);
-            <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">this</span>.state = {isHot: <span class="hljs-literal">false</span>}
-            <span class="hljs-keyword">this</span>.changeWeather = <span class="hljs-keyword">this</span>.changeWeather.bind(<span class="hljs-keyword">this</span>)
-            <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x4E86;</span>
-            <span class="hljs-comment">// this.changeWeather &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x539F;&#x578B;&#x627E;&#x5230;&#x4ED6;</span>
-            <span class="hljs-comment">// this.changeWeather.bind(this) &#x6267;&#x884C;&#x5B8C;&#x4E86;&#x5C31;&#x83B7;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
-            <span class="hljs-comment">// &#x7136;&#x540E;&#x8D4B;&#x503C;&#x7ED9;&#x4E86;changeWeather</span>
-            <span class="hljs-keyword">this</span>.demo = <span class="hljs-keyword">this</span>.changeWeather
-            <span class="hljs-comment">// &#x89E3;&#x51B3;changeWeather &#x6307;&#x5411;&#x7684;&#x95EE;&#x9898;</span>
+<p><a href="img/image-20210309163313421.png" data-lightbox="17e1a1d2-b727-4096-b366-d2f2a27ef07b" data-title="image-20210309163313421"><img src="img/image-20210309163313421.png" alt="image-20210309163313421"></a></p>
+<p>```html
+&lt;!doctype html&gt;</p>
+<p></p>
+<p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06_&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E09;&#x5927;&#x5C5E;&#x6027;1_state.html.html.html</title>
+    <!--引入 react 核心库--></p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;../js/react.development.js&quot;&gt;&lt;/script&gt;
+&lt;!--&#x5F15;&#x5165; react-dom ,&#x7528;&#x4E8E;&#x652F;&#x6301;react &#x64CD;&#x4F5C;Dom--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/react-dom.development.js&quot;&gt;&lt;/script&gt;
+&lt;!--&#x5F15;&#x5165;babel,&#x7528;&#x4E8E;&#x5C06;jsx&#x8F6C;&#x4E3A;js--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/babel.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>&lt;/head&gt;</p>
+<p>
+<!--准备好一个"容器""--></p>
+<p></p><div id="test"></div>
+<!--
+react 中 他重新封装了这些事件, 他
+--><p></p>
+<p><button></button>
+<!--babel,表示是jsx--></p>
+<script type="text/babel">
+    // 1. 创建组件
+    class Weather extends React.Component {
+        constructor(props) {
+            super(props);
+            // 初始化状态
+            this.state = {isHot: false}
+            this.changeWeather = this.changeWeather.bind(this)
+            // 可以获取到了
+            // this.changeWeather 可以通过原型找到他
+            // this.changeWeather.bind(this) 执行完了就获得到了一个实例对象
+            // 然后赋值给了changeWeather
+            this.demo = this.changeWeather
+            // 解决changeWeather 指向的问题
         }
 
         render() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);
-            <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">const</span> {isHot} = <span class="hljs-keyword">this</span>.state.isHot
-            <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.demo}</span>&gt;</span>&#x4ECA;&#x5929;&#x5929;&#x6C14;&#x5F88;{isHot ? &apos;&#x708E;&#x70ED;&apos; : &apos;&#x51C9;&#x723D;&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
-            <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x7684;&#x662F;&#x81EA;&#x8EAB;&#x4E0A;&#x7684;changeWeather,&#x800C;&#x4E0D;&#x662F;&#x539F;&#x578B;&#x4E0A;&#x7684;changeWeather</span>
-            <span class="hljs-comment">// this.changeWeather = this.changeWeather.bind(this)</span>
-            <span class="hljs-comment">// &#x5427;&#x539F;&#x578B;&#x4E0A;&#x7684;&#x51FD;&#x6570; &#x6302;&#x5728;&#x4E86; &#x672C;&#x5B9E;&#x4F8B; &#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x4E0A;</span>
+            console.log(this);
+            // 读取状态
+            const {isHot} = this.state.isHot
+            return <h1 onClick={this.demo}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            // 这里调用的是自身上的changeWeather,而不是原型上的changeWeather
+            // this.changeWeather = this.changeWeather.bind(this)
+            // 吧原型上的函数 挂在了 本实例 中的属性上
 
         }
 
         changeWeather() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);  <span class="hljs-comment">// &#x62A5;&#x9519;</span>
+            console.log(this);  // 报错
 
         }
     }
 
-    <span class="hljs-comment">// 2.  &#x6E32;&#x67D3; &#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
-    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Weather</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>));
+    // 2.  渲染 组件到页面
+    ReactDOM.render(<Weather/>, document.getElementById('test'));
 
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</script>
 
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
+<p>&lt;/body&gt;
+&lt;/html&gt;
+```</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
 
                                 
                                 </section>
@@ -2296,7 +2299,7 @@ react &#x4E2D; &#x4ED6;&#x91CD;&#x65B0;&#x5C01;&#x88C5;&#x4E86;&#x8FD9;&#x4E9B;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"解决类中this指向问题","level":"1.12.5","depth":2,"next":{"title":"setState的使用","level":"1.12.6","depth":2,"path":"017_setState的使用.md","ref":"017_setState的使用.md","articles":[]},"previous":{"title":"类中方法中的this","level":"1.12.4","depth":2,"path":"015_类中方法中的this.md","ref":"015_类中方法中的this.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"016_解决类中this指向问题.md","mtime":"2021-03-09T11:06:24.485Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T02:05:28.732Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"解决类中this指向问题","level":"1.12.5","depth":2,"next":{"title":"setState的使用","level":"1.12.6","depth":2,"path":"017_setState的使用.md","ref":"017_setState的使用.md","articles":[]},"previous":{"title":"类中方法中的this","level":"1.12.4","depth":2,"path":"015_类中方法中的this.md","ref":"015_类中方法中的this.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"016_解决类中this指向问题.md","mtime":"2021-03-28T11:41:55.794Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2304,6 +2307,10 @@ react &#x4E2D; &#x4ED6;&#x91CD;&#x65B0;&#x5C01;&#x88C5;&#x4E86;&#x8FD9;&#x4E9B;&
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>

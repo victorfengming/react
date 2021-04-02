@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -2078,9 +2082,9 @@
                                 <h1 id="045-getsnapshotbeforeupdate">045 getSnapshotBeforeUpdate</h1>
 <p><code>getSnapshotBeforeUpdate</code>&#x6BD4;&#x4E4B;&#x524D;&#x5185;&#x4E2A;&#x6709;&#x70B9;&#x513F;&#x610F;&#x4E49;,&#x521A;&#x624D;&#x5185;&#x4E2A;&#x5185;&#x5199;&#x5B8C;&#x4E86;&#x8FD8;&#x8FDD;&#x80CC;&#x4E86;&#x4E00;&#x4E9B;&#x539F;&#x5219;,&#x6709;&#x642D;&#x5EFA;&#x4E86;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x624D;&#x641E;&#x51FA;&#x6765;&#x4E86;,&#x7136;&#x540E;&#x8FD8;&#x5F15;&#x53D1;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x95EE;&#x9898;,&#x5C31;&#x5C31;&#x5C31; ... &#x5C31;&#x2122;&#x79BB;&#x8C31;</p>
 <h2 id="&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x7684;&#x56FE;">&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x7684;&#x56FE;</h2>
-<p><a href="045_getSnapshotBeforeUpdate/1615382220240.png" data-lightbox="056acb1b-ca47-4b30-8d15-29f883bc0eec" data-title="1615382220240"><img src="045_getSnapshotBeforeUpdate/1615382220240.png" alt="1615382220240"></a></p>
+<p><a href="045_getSnapshotBeforeUpdate/1615382220240.png" data-lightbox="3cd1e2d6-827d-4f17-bdbb-4412fee9af55" data-title="1615382220240"><img src="045_getSnapshotBeforeUpdate/1615382220240.png" alt="1615382220240"></a></p>
 <h2 id="&#x65E7;&#x7684;&#x56FE;">&#x65E7;&#x7684;&#x56FE;</h2>
-<p><a href="045_getSnapshotBeforeUpdate/1615382244415.png" data-lightbox="9e0a2534-7b8a-4e0d-baea-61ef7018055e" data-title="1615382244415"><img src="045_getSnapshotBeforeUpdate/1615382244415.png" alt="1615382244415"></a></p>
+<p><a href="045_getSnapshotBeforeUpdate/1615382244415.png" data-lightbox="8c2cc440-2e8e-4f36-bcd5-8768560600d3" data-title="1615382244415"><img src="045_getSnapshotBeforeUpdate/1615382244415.png" alt="1615382244415"></a></p>
 <p>&#x6211;&#x5148;&#x628A;&#x4E0A;&#x4E00;&#x4E2A;&#x51FD;&#x6570; ,&#x8BA9;&#x4ED6;&#x8FD4;&#x56DE;null,&#x4F46;&#x662F;&#x6211;&#x8FD8;&#x4E0D;&#x7ED9;&#x4ED6;&#x5220;&#x9664;&#x6389;,&#x4E0D;&#x7136;&#x4F60;&#x603B;&#x662F;&#x611F;&#x89C9;&#x6CA1;&#x6709;&#x8D70;&#x5F0F;&#x7684;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps(props,state) {
     <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
@@ -2110,7 +2114,7 @@
 <pre><code>getSnapshotBeforeUpdate(prevProps, prevState)
 </code></pre><p><code>getSnapshotBeforeUpdate()</code> &#x5728;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x6E32;&#x67D3;&#x8F93;&#x51FA;&#xFF08;&#x63D0;&#x4EA4;&#x5230; DOM &#x8282;&#x70B9;&#xFF09;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;&#x5B83;&#x4F7F;&#x5F97;&#x7EC4;&#x4EF6;&#x80FD;&#x5728;&#x53D1;&#x751F;&#x66F4;&#x6539;&#x4E4B;&#x524D;&#x4ECE; DOM &#x4E2D;&#x6355;&#x83B7;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;&#xFF09;&#x3002;&#x6B64;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x4EFB;&#x4F55;&#x8FD4;&#x56DE;&#x503C;&#x5C06;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9; <code>componentDidUpdate()</code>&#x3002;</p>
 <p>&#x6B64;&#x7528;&#x6CD5;&#x5E76;&#x4E0D;&#x5E38;&#x89C1;&#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728; UI &#x5904;&#x7406;&#x4E2D;&#xFF0C;&#x5982;&#x9700;&#x8981;&#x4EE5;&#x7279;&#x6B8A;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;&#x7684;&#x804A;&#x5929;&#x7EBF;&#x7A0B;&#x7B49;&#x3002;</p>
-<p>&#x5E94;&#x8FD4;&#x56DE; snapshot &#x7684;&#x503C;&#xFF08;&#x6216; <code>null</code>&#xFF09;&#x3002;</p>
+<p>&#x5E94;&#x8FD4;&#x56DE; snapshot &#x7684;&#x503C;&#xFF08;&#x6216; <code>null</code>&#xFF09;&#x3002;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
 
                                 
                                 </section>
@@ -2154,7 +2158,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"getSnapshotBeforeUpdate","level":"1.19.9","depth":2,"next":{"title":"getSnapshotBeforeUpadate案例","level":"1.19.10","depth":2,"path":"046_getSnapshotBeforeUpadate案例.md","ref":"046_getSnapshotBeforeUpadate案例.md","articles":[]},"previous":{"title":"getDerivedStateFromProps","level":"1.19.8","depth":2,"path":"044_getDerivedStateFromProps.md","ref":"044_getDerivedStateFromProps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"045_getSnapshotBeforeUpdate.md","mtime":"2021-03-16T01:37:37.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T02:05:28.732Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"getSnapshotBeforeUpdate","level":"1.19.9","depth":2,"next":{"title":"getSnapshotBeforeUpadate案例","level":"1.19.10","depth":2,"path":"046_getSnapshotBeforeUpadate案例.md","ref":"046_getSnapshotBeforeUpadate案例.md","articles":[]},"previous":{"title":"getDerivedStateFromProps","level":"1.19.8","depth":2,"path":"044_getDerivedStateFromProps.md","ref":"044_getDerivedStateFromProps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"045_getSnapshotBeforeUpdate.md","mtime":"2021-03-28T11:41:55.818Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2162,6 +2166,10 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>

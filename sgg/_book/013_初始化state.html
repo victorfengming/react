@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -2078,52 +2082,53 @@
                                 <h1 id="013&#x521D;&#x59CB;&#x5316;state">013_&#x521D;&#x59CB;&#x5316;state</h1>
 <h2 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h2>
 <p>&#x4ECA;&#x5929;&#x5929;&#x6C14;</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span>
-          <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>06_&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E09;&#x5927;&#x5C5E;&#x6027;1_state.html.html.html<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<p>```html
+&lt;!doctype html&gt;</p>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&#x51C6;&#x5907;&#x597D;&#x4E00;&#x4E2A;&quot;&#x5BB9;&#x5668;&quot;&quot;--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&#x5F15;&#x5165; react &#x6838;&#x5FC3;&#x5E93;--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&#x5F15;&#x5165; react-dom ,&#x7528;&#x4E8E;&#x652F;&#x6301;react &#x64CD;&#x4F5C;Dom--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/react-dom.development.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&#x5F15;&#x5165;babel,&#x7528;&#x4E8E;&#x5C06;jsx&#x8F6C;&#x4E3A;js--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!--babel,&#x8868;&#x793A;&#x662F;jsx--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><span class="javascript">
-    <span class="hljs-comment">// 1. &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Weather</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
-        <span class="hljs-keyword">constructor</span>(props) {
-            <span class="hljs-keyword">super</span>(props);
-            <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">this</span>.state = {isHot:<span class="hljs-literal">false</span>}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06_&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E09;&#x5927;&#x5C5E;&#x6027;1_state.html.html.html</title>
+
+
+
+<!--准备好一个"容器""-->
+<div id="test"></div>
+<!--引入 react 核心库-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!--引入 react-dom ,用于支持react 操作Dom-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--引入babel,用于将jsx转为js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!--babel,表示是jsx-->
+<script type="text/babel">
+    // 1. 创建组件
+    class Weather extends React.Component{
+        constructor(props) {
+            super(props);
+            // 初始化状态
+            this.state = {isHot:false}
         }
         render() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);
-            <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">const</span> {isHot} = <span class="hljs-keyword">this</span>.state.isHot
-            <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x4ECA;&#x5929;&#x5929;&#x6C14;&#x5F88;{isHot ? &apos;&#x708E;&#x70ED;&apos; : &apos;&#x51C9;&#x723D;&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+            console.log(this);
+            // 读取状态
+            const {isHot} = this.state.isHot
+            return <h1>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
         }
     }
 
-    <span class="hljs-comment">// 2.  &#x6E32;&#x67D3; &#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;</span>
-    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Weather</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>));
+    // 2.  渲染 组件到页面
+    ReactDOM.render(<Weather/>, document.getElementById('test'));
 
-    <span class="hljs-comment">// idea &#x8FD0;&#x884C; React ,alt+F2</span>
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    // idea 运行 React ,alt+F2
+</script>
 
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
+
+
+
+<p>```</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
 
                                 
                                 </section>
@@ -2167,7 +2172,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"初始化state","level":"1.12.2","depth":2,"next":{"title":"react中的事件绑定","level":"1.12.3","depth":2,"path":"014_react中的事件绑定.md","ref":"014_react中的事件绑定.md","articles":[]},"previous":{"title":"对state的理解","level":"1.12.1","depth":2,"path":"012_对state的理解.md","ref":"012_对state的理解.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"013_初始化state.md","mtime":"2021-03-09T11:06:24.483Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-16T02:05:28.732Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"初始化state","level":"1.12.2","depth":2,"next":{"title":"react中的事件绑定","level":"1.12.3","depth":2,"path":"014_react中的事件绑定.md","ref":"014_react中的事件绑定.md","articles":[]},"previous":{"title":"对state的理解","level":"1.12.1","depth":2,"path":"012_对state的理解.md","ref":"012_对state的理解.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"013_初始化state.md","mtime":"2021-03-28T11:41:55.793Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2175,6 +2180,10 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
