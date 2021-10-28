@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>getDerivedStateFromProps · GitBook</title>
+        <title>getDerivedStateFromProps · react</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
@@ -41,11 +41,19 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -2041,7 +2058,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -2074,79 +2091,79 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="044getderivedstatefromprops">044_getDerivedStateFromProps</h1>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#044getderivedstatefromprops"><b></b>044_getDerivedStateFromProps</a></li><ul><li><span class="title-icon "></span><a href="#&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;"><b></b>&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#&#x4E00;&#x53E5;&#x8BDD;"><b></b>&#x4E00;&#x53E5;&#x8BDD;</a></li></ul></ul></div><a href="#044getderivedstatefromprops" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="044getderivedstatefromprops"><a name="044getderivedstatefromprops" class="anchor-navigation-ex-anchor" href="#044getderivedstatefromprops"><i class="fa fa-link" aria-hidden="true"></i></a>044_getDerivedStateFromProps</h1>
 <p><code>getDerivedStateFromProps</code>&#x7FFB;&#x8BD1;&#x4E3A;<code>&#x83B7;&#x53D6;&#x6D3E;&#x751F;&#x72B6;&#x6001;&#x4ECE;props&#x4E2D;</code></p>
-<h2 id="&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;">&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;</h2>
+<h2 id="&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;"><a name="&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6D4B;&#x8BD5;</h2>
 <p>&#x4F60;&#x5BB6;&#x8FD9;&#x4E48;&#x4E00;&#x884C;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-javascript">getDerivedStateFromProps() {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getDerivedStateFromProps&quot;</span>);
-}
+<pre class="language-"><code class="lang-javascript"><span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;getDerivedStateFromProps&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
 <p>&#x7136;&#x540E;&#x5C31;&#x6709;&#x8B66;&#x544A;&#x4E86;</p>
 </blockquote>
-<pre><code>Warning: Count: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.
-    at Count (&lt;anonymous&gt;:17:9)
+<pre class="language-"><code>Warning: Count: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.
+    at Count (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span><span class="token punctuation">&gt;</span></span>:17:9)
 </code></pre><blockquote>
 <p>&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x4E0D;&#x5E94;&#x8BE5;&#x7ED9;&#x5B9E;&#x4F8B;&#x7528;</p>
 </blockquote>
-<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;getDerivedStateFromProps&quot;</span>);
-}
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;getDerivedStateFromProps&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
 <p>&#x73B0;&#x5728;&#x62A5;&#x8B66;&#x544A;&#x8FD9;&#x4E2A;</p>
 </blockquote>
-<pre><code>Warning: Count.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.
-    at Count (&lt;anonymous&gt;:17:9)
+<pre class="language-"><code>Warning: Count.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.
+    at Count (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span><span class="token punctuation">&gt;</span></span>:17:9)
 </code></pre><blockquote>
 <p>&#x5C31;&#x662F;&#x8BF4;</p>
 <p>&#x4F60;&#x5FC5;&#x987B;&#x8981;&#x7ED9;&#x6211;&#x8FD4;&#x56DE;, 1. &#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5BF9;&#x8C61; 2, &#x8FD4;&#x56DE; null </p>
 <p>&#x7136;&#x800C;&#x4F60;&#x73B0;&#x5728;&#x8FD4;&#x56DE; undefined &#x5C31;&#x4E0D;&#x884C;</p>
 </blockquote>
 <p>&#x4EE3;&#x7801;&#x6210;&#x8FD9;&#x6837;&#x4E86;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
-}
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get|DerivedStateFromProps&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
 <p>&#x90A3;&#x4ED6;&#x8BA9;&#x6211;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x5BF9;&#x8C61;</p>
 <p>&#x6211;&#x5C31;&#x6309;&#x4ED6;&#x8BF4;&#x7684;&#x6765;</p>
 </blockquote>
-<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps() {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>);
-    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
-}
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get|DerivedStateFromProps&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>count<span class="token operator">:</span><span class="token number">108</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4F60;&#x7684;&#x9875;&#x9762;</p>
-<p><a href="044_getDerivedStateFromProps/1615381094342.png" data-lightbox="49f543a0-28db-4cbe-bc28-91b3e8dd1548" data-title="1615381094342"><img src="044_getDerivedStateFromProps/1615381094342.png" alt="1615381094342"></a></p>
+<p><a href="044_getDerivedStateFromProps/1615381094342.png" data-lightbox="09ae0370-9835-4c90-8fca-36e76bdeefcd" data-title="1615381094342"><img src="044_getDerivedStateFromProps/1615381094342.png" alt="1615381094342"></a></p>
 <p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x80FD;&#x591F;&#x6307;&#x5B9A;&#x72B6;&#x6001;,&#x4F46;&#x662F;&#x6211;&#x73B0;&#x5728;+1 &#x574F;&#x4E86;</p>
 <p>&#x6362;&#x53E5;&#x8BDD;&#x8BF4;,&#x4F60;&#x8FD9;&#x4E2A;&#x4E00;&#x5355;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x5BF9;&#x8C61;,&#x4ED6;&#x5C31;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#x4E86;,(&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x5931;&#x6548;)</p>
 <blockquote>
 <p>&#x6240;&#x4EE5;&#x4EC0;&#x4E48;&#x662F;&#x6D3E;&#x751F;?</p>
 </blockquote>
-<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps(props) {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>,props);
-    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
-}
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get|DerivedStateFromProps&quot;</span><span class="token punctuation">,</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>count<span class="token operator">:</span><span class="token number">108</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x73B0;&#x5728;&#x6253;&#x5370;&#x662F;&#x7A7A;</p>
 <p>&#x90A3;&#x6211;&#x8981;&#x662F;&#x7ED9;</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
-    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span> <span class="hljs-attr">count</span>=<span class="hljs-string">{189}</span>/&gt;</span>, document.getElementById(&apos;test&apos;))
-</span></code></pre>
-<p><a href="044_getDerivedStateFromProps/1615381324806.png" data-lightbox="da2d4e55-b263-41ae-bd17-6fdd027360e8" data-title="1615381324806"><img src="044_getDerivedStateFromProps/1615381324806.png" alt="1615381324806"></a></p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Count count<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">189</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p><a href="044_getDerivedStateFromProps/1615381324806.png" data-lightbox="db99e333-dd2f-44af-9b1c-1c8540e11c35" data-title="1615381324806"><img src="044_getDerivedStateFromProps/1615381324806.png" alt="1615381324806"></a></p>
 <blockquote>
 <p>&#x5728;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762; &#x628A; props &#x8FD4;&#x56DE;&#x4E86;,&#x6240;&#x4EE5;&#x8BF4;,&#x8FD9;&#x4E2A;props&#x5C31;&#x5F53;&#x6210;&#x4E86; &#x72B6;&#x6001;&#x7528;&#x4E86;</p>
 </blockquote>
@@ -2162,20 +2179,23 @@
 <li>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x5728; <strong>prop &#x66F4;&#x6539;&#x65F6;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x67D0;&#x4E9B;&#x6570;&#x636E;</strong>&#xFF0C;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization" target="_blank">&#x8BF7;&#x4F7F;&#x7528; memoization helper &#x4EE3;&#x66FF;</a>&#x3002;</li>
 <li>&#x5982;&#x679C;&#x4F60;&#x60F3;<strong>&#x5728; prop &#x66F4;&#x6539;&#x65F6;&#x201C;&#x91CD;&#x7F6E;&#x201D;&#x67D0;&#x4E9B; state</strong>&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x4F7F;&#x7EC4;&#x4EF6;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component" target="_blank">&#x5B8C;&#x5168;&#x53D7;&#x63A7;</a>&#x6216;<a href="https://react.docschina.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key" target="_blank">&#x4F7F;&#x7528; <code>key</code> &#x4F7F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x4E0D;&#x53D7;&#x63A7;</a> &#x4EE3;&#x66FF;&#x3002;</li>
 </ul>
-<h2 id="&#x4E00;&#x53E5;&#x8BDD;">&#x4E00;&#x53E5;&#x8BDD;</h2>
+<h2 id="&#x4E00;&#x53E5;&#x8BDD;"><a name="&#x4E00;&#x53E5;&#x8BDD;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x53E5;&#x8BDD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x53E5;&#x8BDD;</h2>
 <p>&#x4E86;&#x89E3;&#x5373;&#x53EF;</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// &#x82E5;state &#x7684;&#x503C;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;props,&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;getDerivedStateFromProps</span>
-<span class="hljs-keyword">static</span> getDerivedStateFromProps(props,state) {
-    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get|DerivedStateFromProps&quot;</span>,props,state);
-    <span class="hljs-keyword">return</span> {count:<span class="hljs-number">108</span>};
-}
-<span class="hljs-comment">// &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x7528;&#x5462;,&#x4F60;&#x770B;&#x4F60;&#x8981;&#x662F; &#x72B6;&#x6001;state&#x90FD;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x4E86;,&#x90A3;&#x4F60;&#x76F4;&#x63A5;&#x5728;&#x6784;&#x9020;&#x5668;&#x91CC;&#x9762;&#x7528;</span>
-<span class="hljs-comment">// &#x90A3;&#x4E0D;&#x4E5F;&#x6210;&#x4E86;&#x4E48; &#x8FD8;&#x662F;&#x4E0D;&#x7528; &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x554A;</span>
-<span class="hljs-comment">// &#x5C31;&#x8FD9;&#x94A9;&#x5B50;, &#x4ED6;&#x6CA1;&#x5565;&#x592A;&#x5927;&#x610F;&#x4E49;,&#x5C31;&#x7ED9;&#x4ED6;&#x5E72;&#x6389;&#x90FD;&#x884C;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token comment">// &#x82E5;state &#x7684;&#x503C;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;props,&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;getDerivedStateFromProps</span>
+<span class="token keyword">static</span> <span class="token function">getDerivedStateFromProps</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span>state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5F53;&#x771F;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get|DerivedStateFromProps&quot;</span><span class="token punctuation">,</span>props<span class="token punctuation">,</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>count<span class="token operator">:</span><span class="token number">108</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x7528;&#x5462;,&#x4F60;&#x770B;&#x4F60;&#x8981;&#x662F; &#x72B6;&#x6001;state&#x90FD;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x4E86;,&#x90A3;&#x4F60;&#x76F4;&#x63A5;&#x5728;&#x6784;&#x9020;&#x5668;&#x91CC;&#x9762;&#x7528;</span>
+<span class="token comment">// &#x90A3;&#x4E0D;&#x4E5F;&#x6210;&#x4E86;&#x4E48; &#x8FD8;&#x662F;&#x4E0D;&#x7528; &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x554A;</span>
+<span class="token comment">// &#x5C31;&#x8FD9;&#x94A9;&#x5B50;, &#x4ED6;&#x6CA1;&#x5565;&#x592A;&#x5927;&#x610F;&#x4E49;,&#x5C31;&#x7ED9;&#x4ED6;&#x5E72;&#x6389;&#x90FD;&#x884C;</span>
 </code></pre>
-<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
+<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-28 19:41:55
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -2218,7 +2238,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"getDerivedStateFromProps","level":"1.19.8","depth":2,"next":{"title":"getSnapshotBeforeUpdate","level":"1.19.9","depth":2,"path":"045_getSnapshotBeforeUpdate.md","ref":"045_getSnapshotBeforeUpdate.md","articles":[]},"previous":{"title":"对比新旧生命周期","level":"1.19.7","depth":2,"path":"043_对比新旧生命周期.md","ref":"043_对比新旧生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"044_getDerivedStateFromProps.md","mtime":"2021-03-28T11:41:55.817Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"getDerivedStateFromProps","level":"1.19.8","depth":2,"next":{"title":"getSnapshotBeforeUpdate","level":"1.19.9","depth":2,"path":"045_getSnapshotBeforeUpdate.md","ref":"045_getSnapshotBeforeUpdate.md","articles":[]},"previous":{"title":"对比新旧生命周期","level":"1.19.7","depth":2,"path":"043_对比新旧生命周期.md","ref":"043_对比新旧生命周期.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/react/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"react,构建用户界面"},"file":{"path":"044_getDerivedStateFromProps.md","mtime":"2021-03-28T11:41:55.817Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T02:24:00.766Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2256,15 +2276,19 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>总结props · GitBook</title>
+        <title>总结props · react</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
@@ -41,11 +41,19 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -103,7 +111,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -114,7 +122,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -2039,7 +2056,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -2072,27 +2089,30 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="026&#x603B;&#x7ED3;props">026_&#x603B;&#x7ED3;props</h1>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#026&#x603B;&#x7ED3;props"><b></b>026_&#x603B;&#x7ED3;props</a></li><ul><li><span class="title-icon "></span><a href="#&#x7406;&#x89E3;"><b></b>&#x7406;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#&#x4F5C;&#x7528;"><b></b>&#x4F5C;&#x7528;</a></li></ul></ul></div><a href="#026&#x603B;&#x7ED3;props" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="026&#x603B;&#x7ED3;props"><a name="026&#x603B;&#x7ED3;props" class="anchor-navigation-ex-anchor" href="#026&#x603B;&#x7ED3;props"><i class="fa fa-link" aria-hidden="true"></i></a>026_&#x603B;&#x7ED3;props</h1>
 <p>props &#x4E0D;&#x8981;&#x5199;&#x6210; proto</p>
-<h2 id="&#x7406;&#x89E3;">&#x7406;&#x89E3;</h2>
+<h2 id="&#x7406;&#x89E3;"><a name="&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7406;&#x89E3;</h2>
 <p>&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x6709;props(properties&#x7684;&#x7B80;&#x5199;)&#x5C5E;&#x6027;</p>
 <ol>
 <li>&#x7EC4;&#x4EF6;&#x6807;&#x7B7E;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x4FDD;&#x5B58;&#x5728;props&#x4E2D;</li>
 </ol>
-<h2 id="&#x4F5C;&#x7528;">&#x4F5C;&#x7528;</h2>
+<h2 id="&#x4F5C;&#x7528;"><a name="&#x4F5C;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4F5C;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F5C;&#x7528;</h2>
 <ol>
 <li><p>&#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x4ECE;&#x7EC4;&#x4EF6;&#x5916;&#x5411;&#x7EC4;&#x4EF6;&#x5185;&#x4F20;&#x9012;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;</p>
 </li>
 <li><p>&#x6CE8;&#x610F;: &#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x4E0D;&#x8981;&#x4FEE;&#x6539;props&#x6570;&#x636E;</p>
 </li>
 </ol>
-<p><a href="img/image-20210310132023943.png" data-lightbox="2808eddb-53d2-4c51-9309-e0c7e5cc75b2" data-title="image-20210310132023943"><img src="img/image-20210310132023943.png" alt="image-20210310132023943"></a></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
+<p><a href="img/image-20210310132023943.png" data-lightbox="163bd816-f5bf-4cf5-924e-60637479fa04" data-title="image-20210310132023943"><img src="img/image-20210310132023943.png" alt="image-20210310132023943"></a></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-28 19:41:55
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -2131,7 +2151,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"总结props","level":"1.13.7","depth":2,"next":{"title":"ref","level":"1.14","depth":1,"ref":"","articles":[{"title":"字符串形式的ref","level":"1.14.1","depth":2,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},{"title":"回调形式的ref","level":"1.14.2","depth":2,"path":"028_回调形式的ref.md","ref":"028_回调形式的ref.md","articles":[]},{"title":"回调ref中调用次数的问题","level":"1.14.3","depth":2,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},{"title":"createRef的使用","level":"1.14.4","depth":2,"path":"030_createRef的使用.md","ref":"030_createRef的使用.md","articles":[]},{"title":"总结ref","level":"1.14.5","depth":2,"path":"031_总结ref.md","ref":"031_总结ref.md","articles":[]}]},"previous":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"026_总结.md","mtime":"2021-03-28T11:41:55.799Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"总结props","level":"1.13.7","depth":2,"next":{"title":"ref","level":"1.14","depth":1,"ref":"","articles":[{"title":"字符串形式的ref","level":"1.14.1","depth":2,"path":"027_字符串形式的ref.md","ref":"027_字符串形式的ref.md","articles":[]},{"title":"回调形式的ref","level":"1.14.2","depth":2,"path":"028_回调形式的ref.md","ref":"028_回调形式的ref.md","articles":[]},{"title":"回调ref中调用次数的问题","level":"1.14.3","depth":2,"path":"029_回调ref中调用次数的问题.md","ref":"029_回调ref中调用次数的问题.md","articles":[]},{"title":"createRef的使用","level":"1.14.4","depth":2,"path":"030_createRef的使用.md","ref":"030_createRef的使用.md","articles":[]},{"title":"总结ref","level":"1.14.5","depth":2,"path":"031_总结ref.md","ref":"031_总结ref.md","articles":[]}]},"previous":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/react/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"react,构建用户界面"},"file":{"path":"026_总结.md","mtime":"2021-03-28T11:41:55.799Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T02:24:00.766Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2169,15 +2189,19 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

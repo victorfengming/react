@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>类式组件中的构造器与 · GitBook</title>
+        <title>类式组件中的构造器与 · react</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
@@ -41,11 +41,19 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -2041,7 +2058,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -2074,19 +2091,19 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;">024_&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;</h1>
-<p><a href="img/image-20210310094533007.png" data-lightbox="e4605acf-d360-4f2e-9cd4-c72936ff7bd3" data-title="image-20210310094533007"><img src="img/image-20210310094533007.png" alt="image-20210310094533007"></a></p>
-<p><a href="img/image-20210310094711213.png" data-lightbox="75a41906-dc93-42de-9cdf-82962fe12416" data-title="image-20210310094711213"><img src="img/image-20210310094711213.png" alt="image-20210310094711213"></a></p>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;"><b></b>024_&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;</a></li></ul></div><a href="#024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;"><a name="024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;" class="anchor-navigation-ex-anchor" href="#024&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;"><i class="fa fa-link" aria-hidden="true"></i></a>024_&#x7C7B;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E0E;</h1>
+<p><a href="img/image-20210310094533007.png" data-lightbox="30a5f5f4-55ab-45ab-ae85-e2bc4e739980" data-title="image-20210310094533007"><img src="img/image-20210310094533007.png" alt="image-20210310094533007"></a></p>
+<p><a href="img/image-20210310094711213.png" data-lightbox="f37a44e9-26f8-4310-a723-5c4c62a518fe" data-title="image-20210310094711213"><img src="img/image-20210310094711213.png" alt="image-20210310094711213"></a></p>
 <p>```javascript
 // TODO &#x521B;&#x5EFA;&#x7EC4;&#x4EF6;
 class Person extends React.Component {
     state = {name: &apos;tom&apos;, age: &quot;18&quot;, sex: &quot;&#x5973;&quot;}</p>
-<pre><code>constructor(props) {
+<pre class="language-"><code>constructor(props) {
     // &#x6784;&#x9020;&#x5668; &#x662F;&#x5426;&#x63A5;&#x53D7;props,&#x77F3;&#x4F5B;&#x8BED;&#x4F20;&#x9012;&#x7ED9;super,&#x53D6;&#x51B3;&#x4E8E;:
     // 1. &#x662F;&#x5426;&#x5E0C;&#x671B;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x901A;&#x8FC7;this&#x8BBF;&#x95EE;props
     // &#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53CA;&#x5176;&#x5C11;&#x89C1;
@@ -2119,19 +2136,22 @@ render() {
     this.props.name = &apos;jack&apos;    // &#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4F1A;&#x62A5;&#x9519;,&#x56E0;&#x4E3A;props&#x662F;&#x652F;&#x961F;&#x7684;
     // &#x4ECE;&#x7EC4;&#x5EFA;&#x5916;&#x90E8; &#x6765;&#x7ED9;&#x4ED6;&#x4FE1;&#x606F;,&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x7528;state &#x6765;&#x7ED9;&#x4ED6;&#x6570;&#x636E;&#x4FE1;&#x606F;
     return (
-        &lt;ul&gt;
-            &lt;li&gt;&#x59D3;&#x540D;: {name}&lt;/li&gt;
-            &lt;li&gt;&#x59D3;&#x522B;: {sex}&lt;/li&gt;
-            &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt;
-        &lt;/ul&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>&#x59D3;&#x540D;: {name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>&#x59D3;&#x522B;: {sex}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>&#x5E74;&#x9F84;: {age + 1}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
     )
-    // &lt;li&gt;&#x5E74;&#x9F84;: {age + 1}&lt;/li&gt; &#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x4FEE;&#x6539;,&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;,&#x53EA;&#x6709;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;
+    // <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>&#x5E74;&#x9F84;: {age + 1}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span> &#x8FD9;&#x4E2A;&#x4E0D;&#x7B97;&#x4FEE;&#x6539;,&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;,&#x53EA;&#x6709;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;
 }
 </code></pre><p>}</p>
 <p>// TODO &#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;&#x9875;&#x9762;
 ReactDOM.render(<person name="jerry" age="{19}" sex="&#x7537;">, document.getElementById(&apos;test1&apos;))
-```</person></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
+```</person></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-28 19:41:55
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -2174,7 +2194,7 @@ ReactDOM.render(<person name="jerry" age="{19}" sex="&#x7537;">, document.getEle
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"类式组件中的构造器与","level":"1.13.5","depth":2,"next":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"previous":{"title":"props的简写方式","level":"1.13.4","depth":2,"path":"023_props的简写方式.md","ref":"023_props的简写方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"024_类式组件中的构造器与.md","mtime":"2021-03-28T11:41:55.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"类式组件中的构造器与","level":"1.13.5","depth":2,"next":{"title":"函数式组件使用","level":"1.13.6","depth":2,"path":"025_函数式组件使用.md","ref":"025_函数式组件使用.md","articles":[]},"previous":{"title":"props的简写方式","level":"1.13.4","depth":2,"path":"023_props的简写方式.md","ref":"023_props的简写方式.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/react/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"react,构建用户界面"},"file":{"path":"024_类式组件中的构造器与.md","mtime":"2021-03-28T11:41:55.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T02:24:00.766Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2212,15 +2232,19 @@ ReactDOM.render(<person name="jerry" age="{19}" sex="&#x7537;">, document.getEle
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

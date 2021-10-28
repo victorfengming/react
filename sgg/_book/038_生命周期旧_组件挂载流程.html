@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>生命周期(旧)_组件挂载流程 · GitBook</title>
+        <title>生命周期(旧)_组件挂载流程 · react</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
@@ -41,11 +41,19 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -2041,7 +2058,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -2074,106 +2091,109 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;">038<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;</h1>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;"><b></b>038&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;</a></li></ul></div><a href="#038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;"><a name="038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#038&#x751F;&#x547D;&#x5468;&#x671F;&#x65E7;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>038<em>&#x751F;&#x547D;&#x5468;&#x671F;(&#x65E7;)</em>&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x6D41;&#x7A0B;</h1>
 <p>&#x7406;&#x89E3;:</p>
 <ol>
 <li>&#x7EC4;&#x4EF6;&#x4ECE;&#x521B;&#x5EFA;&#x5230;&#x6B7B;&#x4EA1;&#x5979;&#x4F1A;&#x7ECF;&#x5386;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x9636;&#x6BB5;</li>
 <li>React&#x7EC4;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x94A9;&#x5B50;&#x51FD;&#x6570;(&#x58F0;&#x660E;&#x5468;&#x671F;&#x51FD;&#x6570;),&#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x523B;&#x8C03;&#x7528;</li>
 <li>&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x65F6;,&#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x58F0;&#x660E;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;,&#x505A;&#x7279;&#x5B9A;&#x7684;&#x5DE5;&#x4F5C;.</li>
 </ol>
-<p><a href="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615374349820.png" data-lightbox="d3f28428-c4b5-4ecf-bf04-4f40e3bd0297" data-title="1615374349820"><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615374349820.png" alt="1615374349820"></a></p>
+<p><a href="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615374349820.png" data-lightbox="7a4c865c-7c0a-4d89-b0eb-06f3b14b415c" data-title="1615374349820"><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615374349820.png" alt="1615374349820"></a></p>
 <blockquote>
 <p>&#x58F0;&#x660E;&#x5468;&#x671F;&#x51FD;&#x6570;(&#x94A9;&#x5B50;) &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8C03;&#x7528;,&#x548C;&#x4F60;&#x5199;&#x5728;&#x54EA;&#x513F;&#x4E48;&#x6709;&#x5173;&#x7CFB;</p>
 </blockquote>
 <p>&#x6848;&#x4F8B;</p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Count</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+<pre class="language-"><code class="lang-javascript">    <span class="token comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
+    <span class="token keyword">class</span> <span class="token class-name">Count</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
 
-        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
-        state = {count: <span class="hljs-number">0</span>}
-        <span class="hljs-comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
+        <span class="token comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+        state <span class="token operator">=</span> <span class="token punctuation">{</span>count<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">}</span>
+        <span class="token comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
 
-        <span class="hljs-comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
-        add = () =&gt; {
-            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
-            <span class="hljs-comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">this</span>.setState({count: count + <span class="hljs-number">1</span>})
-        };
+        <span class="token comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
+        <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+            <span class="token comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>count<span class="token operator">:</span> count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-        render() {
-            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
-            <span class="hljs-keyword">return</span> (
-                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;:{count}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.add}</span>&gt;</span>&#x70B9;&#x6211;+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-            )
-        }
-    }
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;<span class="token operator">:</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>add<span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x70B9;&#x6211;<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
-    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+    <span class="token comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Count<span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<p><a href="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615375049976.png" data-lightbox="fb524a2e-d3ce-46fd-93f4-3caa2cc239e9" data-title="1615375049976"><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615375049976.png" alt="1615375049976"></a></p>
+<p><a href="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615375049976.png" data-lightbox="9f2ed6c6-9188-41e4-8b95-a63311f19536" data-title="1615375049976"><img src="038_%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%A7_%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E6%B5%81%E7%A8%8B/1615375049976.png" alt="1615375049976"></a></p>
 <p>&#x6D4B;&#x8BD5;&#x987A;&#x5E8F;</p>
-<pre><code class="lang-javascript">    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Count</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+<pre class="language-"><code class="lang-javascript">    <span class="token comment">// &#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</span>
+    <span class="token keyword">class</span> <span class="token class-name">Count</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
 
-        <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7684;&#x5F53;&#x7136;&#x662F;&#x6784;&#x9020;&#x5668;</span>
-        <span class="hljs-keyword">constructor</span>(props) {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;count-constructor&quot;</span>);
-            <span class="hljs-keyword">super</span>(props);
-            <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">this</span>.state = {count: <span class="hljs-number">0</span>}
-                    <span class="hljs-comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
+        <span class="token comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7684;&#x5F53;&#x7136;&#x662F;&#x6784;&#x9020;&#x5668;</span>
+        <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;count-constructor&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// &#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>count<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">}</span>
+                    <span class="token comment">// &#x8FD9;&#x91CC;count &#x548C;&#x7C7B;&#x540D; Count &#x6CA1;&#x5173;&#x7CFB;</span>
 
-        }
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
-        add = () =&gt; {
-            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
-            <span class="hljs-comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
-            <span class="hljs-keyword">this</span>.setState({count: count + <span class="hljs-number">1</span>})
-        };
+        <span class="token comment">//&#x52A0;1&#x6309;&#x94AE;&#x7684;&#x56DE;&#x8C03;</span>
+        <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x83B7;&#x53D6;&#x539F;&#x6765;&#x7684;&#x72B6;&#x6001;</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+            <span class="token comment">// &#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>count<span class="token operator">:</span> count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x94A9;&#x5B50;</span>
-        componentWillMount() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;componentWillMount&quot;</span>);
-        }
+        <span class="token comment">// &#x7EC4;&#x4EF6;&#x5C06;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x94A9;&#x5B50;</span>
+        <span class="token function">componentWillMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;componentWillMount&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-comment">// &#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x94A9;&#x5B50;</span>
-        componentDidMount() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;componentDitMount&quot;</span>)
-        }
-        render() {
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;render&quot;</span>)
-            <span class="hljs-keyword">const</span> {count} = <span class="hljs-keyword">this</span>.state;
-            <span class="hljs-keyword">return</span> (
-                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;:{count}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.add}</span>&gt;</span>&#x70B9;&#x6211;+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-            )
-        }
-    }
+        <span class="token comment">// &#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x94A9;&#x5B50;</span>
+        <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;componentDitMount&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;render&quot;</span><span class="token punctuation">)</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>&#x5F53;&#x524D;&#x6C42;&#x548C;&#x4E3A;<span class="token operator">:</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>add<span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x70B9;&#x6211;<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
-    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test&apos;</span>))
+    <span class="token comment">//&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Count<span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<pre><code>
+<pre class="language-"><code>
 Inline Babel script:8 count-constructor
 Inline Babel script:27 componentWillMount
 Inline Babel script:35 render
 Inline Babel script:32 componentDitMount
-</code></pre><p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
+</code></pre><p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-28 19:41:55
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -2216,7 +2236,7 @@ Inline Babel script:32 componentDitMount
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_组件挂载流程","level":"1.19.2","depth":2,"next":{"title":"生命周期(旧)_setState流程","level":"1.19.3","depth":2,"path":"039_生命周期旧_setState流程.md","ref":"039_生命周期旧_setState流程.md","articles":[]},"previous":{"title":"引出生命周期","level":"1.19.1","depth":2,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"038_生命周期旧_组件挂载流程.md","mtime":"2021-03-28T11:41:55.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T05:45:47.809Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"生命周期(旧)_组件挂载流程","level":"1.19.2","depth":2,"next":{"title":"生命周期(旧)_setState流程","level":"1.19.3","depth":2,"path":"039_生命周期旧_setState流程.md","ref":"039_生命周期旧_setState流程.md","articles":[]},"previous":{"title":"引出生命周期","level":"1.19.1","depth":2,"path":"037_引出生命周期.md","ref":"037_引出生命周期.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/react/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"react,构建用户界面"},"file":{"path":"038_生命周期旧_组件挂载流程.md","mtime":"2021-03-28T11:41:55.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-28T02:24:00.766Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -2254,15 +2274,19 @@ Inline Babel script:32 componentDitMount
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         
